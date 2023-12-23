@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', function() {
     verificationCodeInput.addEventListener('input', function() {
         // Get the current value of the input
         const codeValue = this.value.trim().toString();
-        console.log('Entered Code:', codeValue);
-        console.log('Correct Code:', verificationCode);
+       // console.log('Entered Code:', codeValue);
+       // console.log('Correct Code:', verificationCode);
 
         // Check if the input value has reached 6 digits
         if (codeValue.length === 6) {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const userData = sessionStorage.getItem('passwordData');
             const user = JSON.parse(userData);
-            console.log(user.email);
+            //console.log(user.email);
 
             // Note: 'phone' is not defined in your provided code
             // Replace it with the correct variable or value
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Handle the response as needed (e.g., show success message)
                 const data = await response.json();
-                console.log('Server Response:', data);
+                //console.log('Server Response:', data);
 
                 // Check if the message is "User updated successfully" or if the JSON is empty
                 if (data && data.message === "User updated successfully") {

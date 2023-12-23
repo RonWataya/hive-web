@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const businessData = sessionStorage.getItem('businessData');
     
 
-    console.log('Business Data:', businessData);
+    //console.log('Business Data:', businessData);
 
    
       // Check if businessData is valid JSON

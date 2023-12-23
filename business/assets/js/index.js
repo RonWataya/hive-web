@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Handle the response as needed (e.g., show success message)
                 const data = await response.json();
-                console.log('Server Response:', data);
+               // console.log('Server Response:', data);
 
                 // Check if the message is "User updated successfully" or if the JSON is empty
                 if (data && data.message === "review inserted successfully") {
@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Handle the response as needed (e.g., show success message)
                 const data = await response.json();
-                console.log('Server Response:', data);
+               // console.log('Server Response:', data);
 
                 // Check if the message is "User updated successfully" or if the JSON is empty
                 if (data && data.message === "Mail sent") {

@@ -96,8 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
         verificationCodeInput.addEventListener('input', function() {
             // Get the current value of the input
             const codeValue = this.value.trim().toString();
-            console.log('Entered Code:', codeValue);
-            console.log('Correct Code:', verificationCode);
+           // console.log('Entered Code:', codeValue);
+           // console.log('Correct Code:', verificationCode);
 
             // Check if the input value has reached 6 digits
             if (codeValue.length === 6) {

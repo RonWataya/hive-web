@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const ideaData = sessionStorage.getItem('ideaData');
     
 
-    console.log('Idea Data:', ideaData);
+   // console.log('Idea Data:', ideaData);
 
    
       // Check if businessData is valid JSON

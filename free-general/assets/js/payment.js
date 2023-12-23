@@ -39,7 +39,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
 
             if (response.ok) {
                 const data = await response.json();
-                console.log('Stripe Response:', data);
+               // console.log('Stripe Response:', data);
 
                 // Handle the redirect on the client side
                 window.location.href = data.url;
@@ -79,7 +79,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
     
             if (response.ok) {
                 const data = await response.json();
-                console.log('PayPal Order ID:', data.id);
+                //console.log('PayPal Order ID:', data.id);
     
                 // Redirect to the PayPal checkout URL
                 window.location.href = data.url;

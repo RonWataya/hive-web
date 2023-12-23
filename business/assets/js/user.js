@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const userData = sessionStorage.getItem('userData');
 
-    console.log('User Data:', userData);
+   // console.log('User Data:', userData);
 
     if (!userData) {
         // User data is not present, redirect to the login page
