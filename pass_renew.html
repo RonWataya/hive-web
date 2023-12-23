@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>MoneyHive-Password Renew</title>
+    <link href="assets/img/hive-logo.png" rel="icon">
+    <link href="assets/img/hive-logo.png" rel="apple-touch-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="sign-in/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css">
+    <link href="sign-in/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/lib/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/lib/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/style.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/responsive.css">
+
+    <!-- Style for the form-->
+    <style>
+        /* Base styles for larger screens */
+        
+        .fgt-sec {
+            display: inline-block;
+            margin-bottom: 20px;
+            /* Adjust the value to control the spacing between radio buttons */
+        }
+        
+        .sn-field {
+            margin-top: 20px;
+            /* Adjust the value to control how much the text field goes down */
+        }
+        /* Optional: Style the submit button */
+        
+        button[type="submit"] {
+            background-color: #007BFF;
+            /* Change to your desired button background color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        /* Responsive styles for smaller screens (e.g., screens less than 768px wide) */
+        
+        @media (max-width: 768px) {
+            .fgt-sec {
+                /* Keep radio buttons stacked on top of each other */
+                display: block;
+                margin-bottom: 10px;
+                /* Adjust the margin to control spacing between radio buttons */
+            }
+            .sn-field {
+                /* Define your styles for smaller screens here */
+            }
+            /* You can also override or modify the button styles for smaller screens */
+        }
+    </style>
+
+
+</head>
+
+
+<body class="sign-in">
+
+
+    <div class="wrapper">
+
+        <div class="sign-in-page">
+            <div class="signin-popup">
+                <div class="signin-pop">
+                    <div class="row">
+
+                        <div class="col-lg-6">
+                            <div class="login-sec">
+
+                                <div class="sign_in_sec current" id="tab-1">
+
+                                    <h3>Create a new password</h3>
+
+                                    <form id="verification">
+                                        <div class="row">
+
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" name="password" id="password" placeholder="New password">
+                                                    <i class="fa fa-key"></i>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-lg-12 no-pdd">
+                                                <div class="sn-field">
+                                                    <input type="text" name="confirm" id="confirm" placeholder="Confirm password">
+                                                    <i class="fa fa-key"></i>
+                                                </div>
+                                                <!--sn-field end-->
+                                                <span id="passwordMatchError" class="error-message"></span>
+                                            </div>
+
+                                            <div class="col-lg-12 no-pdd">
+                                                <button type="button" id="passwordSubmit">
+                                                    <a style="text-decoration:none;color:white;">Submit</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div id="VerificationMessage"></div>
+                                    <!--login-resources end-->
+                                </div>
+                                <!--sign_in_sec end-->
+                                <div class="sign_in_sec" id="tab-2">
+
+
+
+                                    <!--dff-tab end-->
+                                </div>
+                            </div>
+                            <!--login-sec end-->
+                        </div>
+                    </div>
+                </div>
+                <!--signin-pop end-->
+            </div>
+            <!--signin-popup end-->
+            <div class="footy-sec">
+                <div class="container">
+                    <ul>
+                        <li><a href="help-center.html" title="">Help Center</a></li>
+                        <li><a href="about.html" title="">About</a></li>
+                        <li><a href="#" title="">Privacy Policy</a></li>
+                        <li><a href="#" title="">Community Guidelines</a></li>
+                        <li><a href="#" title="">Cookies Policy</a></li>
+                        <li><a href="#" title="">Career</a></li>
+                        <li><a href="#" title="">Copyright Policy</a></li>
+                    </ul>
+                    <p style="color:#28282B">&copy;Copyright 2023</p>
+                </div>
+            </div>
+            <!--footy-sec end-->
+        </div>
+        <!--sign-in-page end-->
+
+
+    </div>
+    <!--theme-layout end-->
+
+
+
+    <script type="text/javascript" src="sign-in/js/jquery.min.js"></script>
+    <script type="text/javascript" src="sign-in/js/popper.js"></script>
+    <script type="text/javascript" src="sign-in/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="sign-in/lib/slick/slick.min.js"></script>
+    <script type="text/javascript" src="sign-in/js/script.js"></script>
+    <script type="text/javascript" src="sign-in/css/js/script.js"></script>
+    <script src="assets/js/pass_reset.js"></script>
+
+
+
+
+</body>
+
+</html>

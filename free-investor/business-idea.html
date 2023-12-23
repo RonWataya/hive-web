@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Business Ideas | MoneyHive</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/hive-logo-small.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+       
+
+        .pop {
+     width: 300px;
+     border-radius: 6px;
+     background: #fff;
+     position: fixed;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%) translateY(100%);
+     text-align: center;
+     padding: 0 30px 30px;
+     color: #333;
+     visibility: hidden;
+     transition: transform 0.4s, visibility 0.4s;
+     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .open-pop {
+     visibility: visible;
+     transform: translateX(-50%) translateY(-50%);
+    }
+    
+         .pop img {
+             width: 70px;
+             margin-top: -50px;
+             border-radius: 50%;
+             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+         }
+    
+         .pop h2 {
+             font-size: 30px;
+             font-weight: 500;
+             margin: 30px 0 10px;
+         }
+    
+         .pop button {
+             width: 100%;
+             margin-top: 40px;
+             padding: 10px 0;
+             background: #6fd649;
+             color: #fff;
+             border: 0;
+             outline: none;
+             font-size: 18px;
+             border-radius: 4px;
+             cursor: pointer;
+             box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+         }
+    
+         .pop.error button {
+             background: red;
+             /* Red color for error button */
+         }
+    
+         .pop.error h2 {
+             color: red;
+             /* Red color for error message */
+         }
+     </style>
+    <!-- =======================================================
+  * Template Name: NiceAdmin - v2.3.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/hive-cropped.png" alt="">
+            </a>
+
+        </div>
+        <!-- End Logo -->
+
+
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+
+                <!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">!</span>
+                    </a>
+                    <!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You may have new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Welcome to moneyhive, learn more about our services as a platform</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Update your profile by clicking the menu on the right pane</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Upgrade your account to premium to access unlimited services and data</h4>
+                                <p>Review your security settings</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul>
+                    <!-- End Notification Dropdown Items -->
+
+                </li>
+                <!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                   
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span id="unreadMessageCount" class="badge bg-success badge-number">0</span>
+                    </a>
+                    <!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You may have new messages
+                            <a href="chat.html"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>                      
+                    </ul>
+                    <!-- End Messages Dropdown Items -->
+
+                </li>
+                <!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img id="profileImage" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="userName"></span>
+                    </a>
+                    <!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6 id="fullName"></h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="business-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Business Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="business-idea.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Business Idea</span>
+                            </a>
+                        </li>
+                       
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="support.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="../index.html">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- End Profile Dropdown Items -->
+                </li>
+                <!-- End Profile Nav -->
+
+            </ul>
+        </nav>
+        <!-- End Icons Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Home Nav -->
+
+   
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="payment.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Upgrade your account</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="privacy.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Privacy Policy</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="faq.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="support.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Support</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="about.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Founders</span>
+                </a>
+            </li>
+
+
+
+
+        </ul>
+
+    </aside>
+    <!-- End Sidebar-->
+
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Profile</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="business-idea.html">Refresh<i class="fa fa-refresh"></i></a></li>
+                </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section profile">
+            <div class="row">
+                <div class="col-xl-4">
+
+                    <div class="card">
+                        <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+
+                            <img id="ideaProfLogo" alt="Profile" class="rounded-circle">
+                            <h2 id="ideaProfName"></h2>
+                            <h3 id="ideaProfCountry"></h3>
+                            <div class="social-links mt-2">
+                                <a id="twitterLink" href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                                <a id="facebookLink" href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                                <a id="instagramLink" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                                <a id="linkedinLink" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-xl-8">
+
+                    <div class="card">
+                        <div class="card-body pt-3">
+                             <!-- Bordered Tabs -->
+                             <ul class="nav nav-tabs nav-tabs-bordered">
+
+                                <li class="nav-item">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Idea Profile</button>
+                                </li>
+
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profile</button>
+                                </li>
+
+                               
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-delete-account">Delete Profile</button>
+                                </li>
+
+
+                            </ul>
+                            <div class="tab-content pt-2">
+
+                                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                                    <h5 class="card-title">Summary</h5>
+                                    <p class="small fst-italic" id="ideaProfSummary">
+                                    </p>
+
+                                    
+
+                                    <h5 class="card-title">Profile Details</h5>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Market</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaProfMarket"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Traction</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaProfTraction"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Category</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaProfCategory"></div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Founders</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaProfFounders"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">User Name</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaUser"></div>
+                                    </div>
+
+  
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Business Email</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaEmail"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Business Phone</div>
+                                        <div class="col-lg-9 col-md-8" id="ideaPhone"></div>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                                    <!-- Profile Edit Form -->
+                                    <form id="profileForm">
+                                        <div class="row mb-3">
+                                            <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Your Logo</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <img id="previewImage" src="assets/img/upload.png" alt="Profile" style="max-width: 200px; max-height: 200px;">
+                                                <input type="hidden" id="base64ImageInput">
+                                                <div class="pt-2">
+                                                    <input type="file" accept="image/*" class="form-control" id="profileImageInput" style="display: none;">
+                                                    <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image" onclick="document.getElementById('profileImageInput').click(); return false;"><i class="bi bi-upload"></i></a>
+                                                    <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image" onclick="removeProfileImage(); return false;"><i class="bi bi-trash"></i></a>
+                                                    <span>The image should be a maximum of 350px of height and 350px of width</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row mb-3">
+                                            <label for="ideaName" class="col-md-4 col-lg-3 col-form-label">Business Name</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <input name="ideaName" type="text" class="form-control" id="ideaname" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label for="categorySelect" class="col-md-4 col-lg-3 col-form-label">Category</label>
+                                            <div class="col-md-8 col-lg-9">
+                                             <select id="categorySelect" class="form-select">
+                                              <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                              <option value="Agriculture">Agriculture</option>
+                                              <option value="E-Commerce">E-Commerce</option>
+                                              <option value="Food and Retail">Food and Retail</option>
+                                              <option value="Real Estate">Real Estate</option>
+                                              <option value="ICT & Technology">ICT & Technology</option>  
+                                              <option value="Finance">Finance</option>
+                                              <option value="Social and Community">Social and Community</option>                                    
+                                             </select>
+                                         </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="summary" class="col-md-4 col-lg-3 col-form-label">Summary</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <textarea name="summary" placeholder="Tell us more about your idea in less than 300 words" class="form-control" id="summary" style="height: 100px" required></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <label for="market" class="col-md-4 col-lg-3 col-form-label">Market</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <textarea name="market" placeholder="Tell us about the market in less than 300 words" class="form-control" id="market" style="height: 100px" required></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label for="traction" class="col-md-4 col-lg-3 col-form-label">Traction</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <textarea name="traction" placeholder="Share us your progress in less than 300 words" class="form-control" id="traction" style="height: 100px" required></textarea>
+                                            </div>
+                                        </div>
+
+                                      
+
+                                        <div class="row mb-3">
+                                            <label for="Country" class="col-md-4 col-lg-3 col-form-label">Country</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <select id="countrySelect" name="country" style="color:rgb(83, 78, 78)">
+                                                            <!-- Options will be populated dynamically using JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label for="founders" class="col-md-4 col-lg-3 col-form-label">Founders</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <input name="founders" type="text" class="form-control" id="founders">
+                                            </div>
+                                        </div>
+                                      
+
+       
+                                        <div class="row mb-3">
+                                            <label for="email" class="col-md-4 col-lg-3 col-form-label">Business Email</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <input name="email" type="text" class="form-control" id="email">
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <label for="phone" class="col-md-4 col-lg-3 col-form-label">Business Phone</label>
+                                            <div class="col-md-8 col-lg-9">
+                                                <input name="phone" type="text" class="form-control" id="phone">
+                                            </div>
+                                        </div>
+
+                                       
+
+                                        <div class="text-center">
+                                            <button type="button" id="buttoncreate" class="btn btn-primary">Create new profile</button>
+                                            &nbsp;
+                                             <button type="button" onclick="openPop()" class="btn btn-primary">Update existing profile</button>
+                                        </div>
+                                       
+
+                                    </form>
+                                    <!-- End Profile Edit Form -->
+
+                                </div>
+
+                            
+
+                               
+                                <div class="tab-pane fade pt-3" id="profile-delete-account">
+                                    <!-- Change Password Form -->
+                                    <form>
+                                        <div class="row mb-3">
+
+                                            <div class="col-md-8 col-lg-9">
+                                                <p></p>
+                                                <br>
+                                                <br>
+                                            </div>
+
+                                            <div class="col-md-8 col-lg-9">
+                                                <input name="delete" type="text" class="form-control" id="delete" required placeholder="Give us a reason why you want to delete your profile">
+                                            </div>
+                                        </div>
+
+                                        <div class="text-center">
+                                            <button type="button" onclick="openPop()" class="btn btn-primary">Delete</button>
+                                        </div>
+                                    </form>
+                                    <span id="deleteError" class="error-message"></span>
+                                    <!-- End Change Password Form -->
+
+                                </div>
+
+                            </div>
+                            <br>
+                            <br>
+                            <div id="message" style="color: rgb(83, 21, 124); font-weight: bold;"> </div>
+                            <!-- End Bordered Tabs -->
+                           
+                <div class="pop" id="pop">
+                    <img src="assets/img/tick.png" alt="popup">
+                    <h2 id="modalMessage"></h2>
+                    <button type="button" onclick="closeModal()">OK</button>
+  
+                </div>
+                <div class="pop" id="alert">
+                    
+                    <h2>Upgrade to premium to access this feature</h2>
+                    <button type="button" onclick="closeAlert()">OK</button>
+  
+                </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    <!-- End #main -->
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <p>@2023</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.min.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <script>
+        // Modal functions
+        function openModal(message) {
+            var overlay = document.querySelector(".overlay");
+            var modal = document.getElementById("pop");
+            var modalImage = document.querySelector(".pop img");
+  
+            modal.classList.add("open-pop");
+            var modalMessage = document.getElementById("modalMessage");
+            modalMessage.textContent = message;
+  
+            if (message == 'Error') {
+                modal.classList.add("error");
+                modalImage.style.display = "none";
+            } else {
+                modal.classList.remove("error");
+            }
+  
+        }
+  
+        function closeModal() {
+            var modal = document.getElementById("pop");
+            modal.classList.remove("open-pop");
+  
+        }
+  
+    </script>
+     <script>
+        // Modal functions
+        function openPop() {
+            var overlay = document.querySelector(".overlay");
+            var modal = document.getElementById("alert");
+  
+            modal.classList.add("open-pop");
+           
+  
+        }
+  
+        function closeAlert() {
+            var modal = document.getElementById("alert");
+            modal.classList.remove("open-pop");
+  
+        }
+  
+    </script>
+    <!-- Template Main JS File -->
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/user-profile.js"></script>
+    <script src="assets/js/countries.js"></script>
+    <script src="assets/js/idea-profile.js"></script>
+    <script src="assets/js/update-idea.js"></script>
+    <script>
+        // Function to get the count of unread messages
+        async function getUnreadMessageCount(userId) {
+            try {
+                const response = await fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_unread_message_count/${userId}`);
+                const data = await response.json();
+                return data.unread_count;
+            } catch (error) {
+                console.error('Error fetching unread message count:', error);
+                return 0;
+            }
+        }
+
+        // Update the unread message count
+        async function updateUnreadMessageCount(userId) {
+            const unreadMessageCountElement = document.getElementById('unreadMessageCount');
+
+            try {
+                const count = await getUnreadMessageCount(userId);
+                unreadMessageCountElement.textContent = count;
+            } catch (error) {
+                console.error('Error updating unread message count:', error);
+            }
+        }
+
+        // Assume the user ID is 28 for demonstration purposes
+        const userData = sessionStorage.getItem('userData');
+        const user = JSON.parse(userData);
+        const userId = user.id;
+
+        // Update the unread message count when the page loads
+        updateUnreadMessageCount(userId);
+
+        // You can also update the count periodically (e.g., every 5 seconds)
+        setInterval(() => {
+            updateUnreadMessageCount(userId);
+        }, 5000);
+    </script>
+   
+
+
+</body>
+
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Portifolio | MoneyHive</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/hive-logo-small.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Adjust the opacity as needed */
+            z-index: 1;
+            display: none;
+        }
+
+        .pop {
+            width: 300px;
+            border-radius: 6px;
+            background: #fff;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%)scale(0.1);
+            text-align: center;
+            padding: 0 30px 30px;
+            color: #333;
+            visibility: hidden;
+            transition: transform 0.4s, top 0.4s;
+            z-index: 2;
+        }
+
+        .open-pop {
+            visibility: visible;
+            top: 50%;
+            transform: translate(-50%, -50%)scale(1);
+        }
+
+        .pop img {
+            width: 70px;
+            margin-top: -50px;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .pop h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin: 30px 0 10px;
+        }
+
+        .pop button {
+            width: 100%;
+            margin-top: 40px;
+            padding: 10px 0;
+            background: #6fd649;
+            color: #fff;
+            border: 0;
+            outline: none;
+            font-size: 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .pop.error button {
+            background: red;
+            /* Red color for error button */
+        }
+
+        .pop.error h2 {
+            color: red;
+            /* Red color for error message */
+        }
+    </style>
+    <!-- =======================================================
+  * Template Name: NiceAdmin - v2.3.1
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/hive-cropped.png" alt="">
+            </a>
+
+        </div>
+        <!-- End Logo -->
+
+
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+
+                <!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">!</span>
+                    </a>
+                    <!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You may have new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Welcome to moneyhive, learn more about our services as a platform</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Update your profile by clicking the menu on the right pane</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Upgrade your account to premium to access unlimited services and data</h4>
+                                <p>Review your security settings</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul>
+                    <!-- End Notification Dropdown Items -->
+
+                </li>
+                <!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                    a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span id="unreadMessageCount" class="badge bg-success badge-number">!</span>
+                    </a>
+                    <!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You may have new messages
+                            <a href="chat.html"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>                      
+                    </ul>
+                    <!-- End Messages Dropdown Items -->
+
+                </li>
+                <!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img id="profileImage" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="userName"></span>
+                    </a>
+                    <!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6 id="fullName"></h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="business-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Business Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="business-idea.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Business Idea</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="support.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="../index.html">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <!-- End Profile Dropdown Items -->
+                </li>
+                <!-- End Profile Nav -->
+
+            </ul>
+        </nav>
+        <!-- End Icons Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Home Nav -->
+
+   
+            <!-- End Register Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="privacy.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Privacy Policy</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="faq.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="support.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Support</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="about.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Founders</span>
+                </a>
+            </li>
+
+
+
+
+
+        </ul>
+
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <h1>Portifolio</h1>
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active"><a href="portifolio.html">Refresh<i class="fa fa-refresh"></i></a></li>
+                </ol>
+            </nav>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section profile">
+            <div class="row">
+                <div class="col-xl-4">
+
+                    <div class="card profile-card">
+                        <div class="card-body profile-card-body pt-4 d-flex flex-column align-items-center">
+                            <img id="logo" alt="Logo" class="rounded-circle profile-picture">
+                            <h2 id="companyName"></h2>
+                            <h3 id="companyCategory"></h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-8">
+
+                    <div class="card">
+                        <div class="card-body pt-3">
+
+                            <!-- Bordered Tabs Justified -->
+                            <ul class="nav nav-tabs nav-tabs-bordered d-flex" id="borderedTabJustified" role="tablist">
+                                <li class="nav-item flex-fill" role="presentation">
+                                    <button class="nav-link w-100 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-home" type="button" role="tab" aria-controls="home" aria-selected="true">Owner Details</button>
+                                </li>
+                                <li class="nav-item flex-fill" role="presentation">
+                                    <button class="nav-link w-100" id="profile-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Innovation details</button>
+                                </li>
+                                <li class="nav-item flex-fill" role="presentation">
+                                    <button class="nav-link w-100" id="contact-tab" data-bs-toggle="tab" data-bs-target="#bordered-justified-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content pt-2" id="borderedTabJustifiedContent">
+                                <!-----------------------------------------------------
+                                    Overview details
+                                ------------------------------------>
+                                <div class="tab-pane fade show active profile-overview" id="bordered-justified-home" role="tabpanel" aria-labelledby="home-tab">
+                                    <h5 class="card-title">Founders</h5>
+                                    <p class="small fst-italic" id="founders"></p>
+                                    <h5 class="card-title">Location</h5>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Country</div>
+                                        <div class="col-lg-9 col-md-8" id="nationality"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label ">Handle</div>
+                                        <div class="col-lg-9 col-md-8" id="username"></div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Phone</div>
+                                        <div class="col-lg-9 col-md-8" id="userphone"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-4 label">Email</div>
+                                        <div class="col-lg-9 col-md-8" id="usermail"></div>
+                                    </div>
+                                    
+                                    
+
+                                </div>
+                                <!-----------------------------------------------------
+                                    Terms and conditions details
+                                ------------------------------------>
+                                <div class="tab-pane fade" id="bordered-justified-profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <h5 class="card-title">Summary</h5>
+                                    <p class="small fst-italic" id="summary"></p>
+                                    <h5 class="card-title">Traction</h5>
+                                    <p class="small fst-italic" id="traction"></p>
+                                    <h5 class="card-title">Market</h5>
+                                    <p class="small fst-italic" id="market"></p>
+                                </div>
+
+                                <!-----------------------------------------------------
+                                    Contact details
+                                ------------------------------------>
+                                <div class="tab-pane fade" id="bordered-justified-contact" role="tabpanel" aria-labelledby="contact-tab">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Send us an email</h5>
+
+
+                                        <form class="row g-3">
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input type="text" name="name"class="form-control" id="name" placeholder="Your Name">
+                                                    <label for="floatingName">Your Full name</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="emailaddress" name="emailaddress" placeholder="Your Email">
+                                                    <label for="floatingEmail">Your Email Address</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input type="phone" class="form-control" id="Phone" name="Phone"placeholder="Phone">
+                                                    <label for="floatingPassword">Your Phone</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" placeholder="inquiry" id="inquiry" style="height: 200px;"></textarea>
+                                                    <label for="floatingTextarea">Tell us about your inquiry..</label>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="text-center">
+                                                <button type="button" class="btn btn-primary" id="buttonInquiry">Submit</button>
+                                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                            </div>
+
+                                            <div class="text-center">
+                                                <h5 class="card-title">Or chat with us</h5>
+
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChat"><i class="bi bi-chat"></i> Start a chat!</button>
+                                                <button type="button" class="btn btn-success"><i class="bi bi-whatsapp"></i> Whatsapp!</button>
+
+                                            </div>
+                                        </form>
+                                        <span id="inquiryError" class="error-message"></span>
+                                    </div>
+                                   
+                                </div>
+                                <!-- End Bordered Tabs Justified -->
+
+                                <!------Modal ------->
+                                <div class="modal fade" id="modalDialogScrollable" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Reviews</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card-body">
+
+                                                    <!-- List group with Advanced Contents -->
+                                                    <div class="list-group">
+
+                                                    </div>
+                                                    <!-- End List group Advanced Content -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDialog" id="buttonReview">Add your review</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal Dialog Scrollable-->
+
+                                    <div>
+
+                                    </div>
+
+
+                                </div>
+                                <!-- End Bordered Tabs -->
+
+                                <!------Modal ------->
+                                <div class="modal fade" id="modalDialog" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Reviews</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card-body">
+
+                                                    <form class="row g-3">
+
+                                                        <div class="col-12">
+                                                            <div class="form-floating">
+                                                                <textarea class="form-control" placeholder="Address" id="reviewMessage" style="height: 100px;"></textarea>
+                                                                <label for="floatingTextarea">Add your own review about this portifolio</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <span id="submitError" class="error-message"></span>
+                                                        <div id="message" style="color: rgb(83, 21, 124); font-weight: bold;"> </div>
+
+
+                                                    </form>
+                                                    <!-- End floating Labels Form -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary" id="submitReview">Submit</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal Dialog Scrollable-->
+
+                                    <div>
+
+                                    </div>
+
+
+                                </div>
+
+                                 <!------Modal ------->
+                                 <div class="modal fade" id="modalChat" tabindex="-1">
+                                    <div class="modal-dialog modal-dialog-scrollable">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Chat</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="card-body">
+
+                                                    <form class="row g-3">
+
+                                                        <div class="col-12">
+                                                            <div class="form-floating">
+                                                                <textarea class="form-control" placeholder="Address" id="chatContent" style="height: 100px;"></textarea>
+                                                                <label for="floatingTextarea">Write your message here</label>
+                                                            </div>
+                                                        </div>
+                                                        <br>
+                                                        <span id="submitError" class="error-message"></span>
+                                                        <div id="resp" style="color: rgb(83, 21, 124); font-weight: bold;"> </div>
+
+
+                                                    </form>
+                                                    <!-- End floating Labels Form -->
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary" id="sendButton" onclick="sendChat()">Send</button>
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Modal Dialog Scrollable-->
+
+                                    <div>
+
+                                    </div>
+
+
+                                </div>
+                                <!-- End Bordered Tabs -->
+                                <div class="pop" id="pop">
+                                    <img src="assets/img/tick.png" alt="popup">
+                                    <h2 id="modalMessage"></h2>
+                                    <button type="button" onclick="closeModal()">OK</button>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <p>@2023</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.min.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+ 
+        <script>
+            // Modal functions
+            function openModal(message) {
+                var overlay = document.querySelector(".overlay");
+                var modal = document.getElementById("pop");
+                var modalImage = document.querySelector(".pop img");
+    
+                modal.classList.add("open-pop");
+                var modalMessage = document.getElementById("modalMessage");
+                modalMessage.textContent = message;
+                modal.style.display = "block";
+    
+                if (message == 'Error') {
+                    modal.classList.add("error");
+                    modalImage.style.display = "none";
+                } else {
+                    modal.classList.remove("error");
+                }
+    
+            }
+    
+            function closeModal() {
+                var modal = document.getElementById("pop");
+                modal.classList.remove("open-pop");
+    
+            }
+    
+        </script>
+
+    <!-- Template Main JS File -->
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/user.js"></script>
+
+    <script>
+        function sendChat() {
+            const userData = sessionStorage.getItem('userData');
+            const companyData = sessionStorage.getItem('companyData');
+            const user = JSON.parse(userData);
+            const receiver = JSON.parse(companyData);
+            const id = user.id;
+            const receiverId = receiver.userId;
+            const userName = user.firstName+" "+user.lastName;
+          const senderId = 1; // Replace with the actual sender's ID
+          const messageContent = document.getElementById('chatContent').value;
+          const resp = document.getElementById('resp');
+        
+          fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/send_message', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              sender_id: id,
+              receiver_id: receiverId,
+              sender_name:userName,
+              content: messageContent,
+            }),
+          })
+            .then(response => response.json())
+            .then(result => {
+              console.log(result);
+              if (result && result.message === "Message sent") {
+        
+             resp.textContent=`Your message is sent to ${receiver.name}`;
+        } else {
+          // Set the text content of passwordMatchError
+          resp.textContent="Error"
+        }
+            })
+            .catch(error => console.error('Error sending message:', error));
+        
+          // Clear the input field after sending a message
+          document.getElementById('chatContent').value = '';
+        }
+    </script>
+ <script>
+    // Function to get the count of unread messages
+    async function getUnreadMessageCount(userId) {
+        try {
+            const response = await fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_unread_message_count/${userId}`);
+            const data = await response.json();
+            return data.unread_count;
+        } catch (error) {
+            console.error('Error fetching unread message count:', error);
+            return 0;
+        }
+    }
+
+    // Update the unread message count
+    async function updateUnreadMessageCount(userId) {
+        const unreadMessageCountElement = document.getElementById('unreadMessageCount');
+
+        try {
+            const count = await getUnreadMessageCount(userId);
+            unreadMessageCountElement.textContent = count;
+        } catch (error) {
+            console.error('Error updating unread message count:', error);
+        }
+    }
+
+    // Assume the user ID is 28 for demonstration purposes
+    const userData = sessionStorage.getItem('userData');
+    const user = JSON.parse(userData);
+    const userId = user.id;
+
+    // Update the unread message count when the page loads
+    updateUnreadMessageCount(userId);
+
+    // You can also update the count periodically (e.g., every 5 seconds)
+    setInterval(() => {
+        updateUnreadMessageCount(userId);
+    }, 5000);
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+     crossorigin="anonymous"></script>
+<!-- displa -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9841032129636382"
+     data-ad-slot="8635802794"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+
+</html>

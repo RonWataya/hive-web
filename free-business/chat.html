@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> MoneyHive | Chat</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/hive-logo-small.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      height: 100vh;
+      margin: 0;
+    }
+
+    #messageContainer {
+      display: flex;
+      flex: 1;
+    }
+    #messagesContainer {
+  width: 300px;
+  height: 600px;
+  overflow-y: auto;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+    #messages {
+      width: 300px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+
+    #messageList {
+      list-style-type: none;
+      padding: 0;
+      cursor: pointer;
+    }
+
+    #messageList li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #messageList li:hover {
+      background-color: #ddd;
+    }
+
+    #messageContent {
+      flex: 1;
+      padding: 20px;
+    }
+
+    #chatContent {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    #chatHistory {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    textarea {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    #sendButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: cadetblue;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #endChatButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: rgb(226, 85, 53);
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #sendButton:hover {
+      background-color: #4682b4;
+    }
+
+    #chatHistory {
+      margin-top: 20px;
+    }
+
+    #chatHistory p {
+      margin: 5px 0;
+    }
+
+    .unread {
+      color: blue;
+      font-weight: bold;
+    }
+
+    .read {
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/hive-cropped.png" alt="">
+      </a>
+
+    </div>
+    <!-- End Logo -->
+
+
+
+
+
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index.html">
+          <i class="bi bi-grid"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <!-- End Home Nav -->
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="payment.html">
+            <i class="bi bi-card-list"></i>
+            <span>Upgrade your account</span>
+        </a>
+    </li>
+    
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="privacy.html">
+          <i class="bi bi-card-list"></i>
+          <span>Privacy Policy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="faq.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>FAQ</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="support.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Support</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="about.html">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Founders</span>
+        </a>
+      </li>
+
+
+
+
+
+    </ul>
+
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <div id="messageContainer">
+      <div id="messagesContainer">
+        <h2>Messages</h2>
+        <ul id="messageList"></ul>
+      </div>
+
+      <div id="messageContent">
+        <h2 style="color: cadetblue;font-weight: 600;">Inbox</h2>
+
+        <div id="selectedMessage"></div>
+        <h3>Your chat history</h3>
+        <div id="chatHistory"></div>
+        <textarea id="chatContent" rows="4" cols="50"></textarea><br>
+        <button id="sendButton" onclick="sendChat()">Send Chat</button>
+        <button id="endChatButton">End Chat</button>
+      </div>
+    </div>
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <p>MoneyHive@2023</p>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+  <!-- Template Main JS File -->
+  <script>
+    let selectedUserId = null;
+
+    function getMessages(userId) {
+  fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_messages/${userId}`)
+    .then(response => response.json())
+    .then(messages => {
+      const messageList = document.getElementById('messageList');
+
+      // Clear existing messages
+      messageList.innerHTML = '';
+
+      // Reverse the order of messages to display the most recent ones first
+      
+
+      messages.forEach(message => {
+        const time = message.timestamp; // Assuming time is a timestamp in milliseconds
+
+        const formattedTime = new Date(time).toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: 'numeric',
+          minute: 'numeric',
+          hour12: true,
+        });
+        const senderName = message.name;
+        const content = message.content;
+        const isRead = message.is_read;
+        const li = document.createElement('li');
+
+        li.innerHTML = `<strong>From:</strong> ${senderName},<span style="font-style:italic; color: cadetblue;"><strong> Message:</strong></span> <span style="color:grey;">${content}</span><br><span style="font-size:10px;">${formattedTime}</span>`;
+        li.setAttribute('data-user-id', message.sender_id);
+        li.setAttribute('data-receiver-id', message.receiver_id);
+        li.classList.add(isRead ? 'read' : 'unread');
+        li.onclick = () => openChat(message);
+        messageList.appendChild(li);
+      });
+    })
+    .catch(error => console.error('Error fetching messages:', error));
+}
+
+    function getChatHistory(userId, otherUserId) {
+      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_chat_history/${userId}/${otherUserId}`)
+        .then(response => response.json())
+        .then(history => {
+          const chatHistory = document.getElementById('chatHistory');
+          chatHistory.innerHTML = '';
+
+          history.forEach(entry => {
+            const senderName = entry.name;
+            const content = entry.content;
+            const p = document.createElement('p');
+            p.innerHTML = `<span style="color: cadetblue;">${senderName}:</span> <span style="font-style:italic;color:grey;">${content}</span>`;
+            chatHistory.appendChild(p);
+          });
+        })
+        .catch(error => console.error('Error fetching chat history:', error));
+    }
+
+    function markAsRead(messageId, userId, receiverId) {
+      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          // Update the class of the corresponding list item to 'read'
+          const listItem = document.querySelector(`#messageList li[data-user-id="${userId}"][data-receiver-id="${receiverId}"]`);
+          if (listItem) {
+            listItem.classList.remove('unread');
+            listItem.classList.add('read');
+          } else {
+            console.log(`List item for user ${userId} not found`);
+          }
+        })
+        .catch(error => console.error('Error marking message as read:', error));
+    }
+    function openChat(message) {
+      selectedUserId = message.sender_id;
+      markAsRead(message.id, message.sender_id);
+
+      const selectedMessage = document.getElementById('selectedMessage');
+      selectedMessage.innerHTML = `
+          <p><span style="color: cadetblue;"><strong>From:</strong></span><span style="color:grey;"><strong> ${message.name}</strong><span></p>
+          `;
+
+      getChatHistory(userId, selectedUserId);
+    }
+
+    function sendChat() {
+      const senderId = userId;
+      const receiverId = selectedUserId;
+      const senderName = userName; // Assuming you have user's name stored in userName
+      const messageContent = document.getElementById('chatContent').value;
+
+      fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/send_message', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          sender_id: senderId,
+          receiver_id: receiverId,
+          sender_name: senderName,
+          content: messageContent,
+        }),
+      })
+        .then(response => response.json())
+        .then(result => {
+          console.log(result);
+          getMessages(userId);
+          getChatHistory(userId, selectedUserId);
+        })
+        .catch(error => console.error('Error sending message:', error));
+
+      // Clear the input field after sending a message
+      document.getElementById('chatContent').value = '';
+    }
+
+    // Assume the user ID is 28 for demonstration purposes
+    const userData = sessionStorage.getItem('userData');
+    const user = JSON.parse(userData);
+    const userId = user.id;
+    const userName = user.firstName + ' ' + user.lastName;
+
+    // Fetch messages and mark as read when the page loads
+    getMessages(userId);
+
+    // Poll for new messages every 5 seconds (for demonstration purposes)
+    setInterval(() => {
+      getMessages(userId);
+    }, 5000);
+
+
+    function endChat() {
+        if (confirm("Are you sure you want to end this chat?")) {
+            // Assuming selectedUserId is set when a message is selected
+            const receiverId = selectedUserId;
+
+            fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/end_chat/${userId}/${receiverId}`, {
+                method: 'DELETE',
+            })
+                .then(response => response.json())
+                .then(result => {
+                    console.log(result);
+                    // Remove the chat from the UI
+                    const messageList = document.getElementById('messageList');
+                    const listItem = document.querySelector(`#messageList li[data-receiver-id="${receiverId}"]`);
+                    if (listItem) {
+                        messageList.removeChild(listItem);
+                    }
+                    // Clear the chat content
+                    document.getElementById('selectedMessage').innerHTML = '';
+                    document.getElementById('chatHistory').innerHTML = '';
+                    // Reset selectedUserId
+                    selectedUserId = null;
+                })
+                .catch(error => console.error('Error ending chat:', error));
+        }
+    }
+
+    // Add an event listener to your "End Chat" button
+    const endChatButton = document.getElementById('endChatButton');
+    if (endChatButton) {
+        endChatButton.addEventListener('click', endChat);
+    }
+
+  </script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+crossorigin="anonymous"></script>
+<!-- displa -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-9841032129636382"
+data-ad-slot="8635802794"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</body>
+
+</html>

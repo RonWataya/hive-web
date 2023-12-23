@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title> Home | MoneyHive</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/hive-logo-small.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+
+        <div class="d-flex align-items-center justify-content-between">
+            <i class="bi bi-list toggle-sidebar-btn"></i>
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="assets/img/hive-cropped.png" alt="">
+            </a>
+
+        </div>
+        <!-- End Logo -->
+
+        <div class="search-bar">
+            <form id="searchForm" class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="city" placeholder="City" title="Enter city name">&nbsp;
+                <input type="text" name="country" placeholder="Country" title="Enter country name">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
+
+
+        <!-- End Search Bar -->
+
+        <nav class="header-nav ms-auto">
+            <ul class="d-flex align-items-center">
+
+
+                <!-- End Search Icon-->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-bell"></i>
+                        <span class="badge bg-primary badge-number">!</span>
+                    </a>
+                    <!-- End Notification Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+                        <li class="dropdown-header">
+                            You may have new notifications
+                            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Welcome to moneyhive, learn more about our services as a platform</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Update your profile by clicking the menu on the right pane</h4>
+                                <p>More details</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li class="notification-item">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <div>
+                                <h4>Upgrade your account to premium to access unlimited services and data</h4>
+                                <p>Review your security settings</p>
+                                <p>Recent</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="#">Show all notifications</a>
+                        </li>
+
+                    </ul>
+                    <!-- End Notification Dropdown Items -->
+
+                </li>
+                <!-- End Notification Nav -->
+
+                <li class="nav-item dropdown">
+
+                    <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                        <i class="bi bi-chat-left-text"></i>
+                        <span id="unreadMessageCount" class="badge bg-success badge-number">!</span>
+                    </a>
+                    <!-- End Messages Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                        <li class="dropdown-header">
+                            You may have new messages
+                            <a href="chat.html"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                    </ul>
+                    <!-- End Messages Dropdown Items -->
+
+                </li>
+                <!-- End Messages Nav -->
+
+                <li class="nav-item dropdown pe-3">
+
+                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                        <img id="profileImage" alt="Profile" class="rounded-circle">
+                        <span class="d-none d-md-block dropdown-toggle ps-2" id="userName"></span>
+                    </a>
+
+                    <!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6 id="fullName"></h6>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="business-idea.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Business Idea</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="support.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="../index.html">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <!-- End Profile Dropdown Items -->
+                </li>
+                <!-- End Profile Nav -->
+
+            </ul>
+        </nav>
+        <!-- End Icons Navigation -->
+
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <a class="nav-link " href="index.html">
+                    <i class="bi bi-grid"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <!-- End Home Nav -->
+
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="payment.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Upgrade your account</span>
+                </a>
+            </li>
+            <!-- End Register Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="privacy.html">
+                    <i class="bi bi-card-list"></i>
+                    <span>Privacy Policy</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="faq.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>FAQ</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="support.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Support</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="about.html">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Founders</span>
+                </a>
+            </li>
+
+
+
+
+
+        </ul>
+
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            <nav>
+                <div class="container">
+                    <i class="fa fa-home" style="font-size:40px;color:grey"></i>
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            </ol>
+                        </div>
+                        <div class="col-auto" id="categories">
+                            <select id="categorySelect" class="form-select" style="margin-left: 10px;"
+                                onchange="checkSelection()">
+                                <option value="" selected>All Categories</option>
+                                <option value="Micro Lender">Micro Lenders</option>
+                                <option value="Microfinancier">Microfinanciers</option>
+                                <option value="Investors">Investors</option>
+                            </select>
+                            <div id="myModal" class="moda">
+                                <div class="moda-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <p>Upgrade to premium to access investors list.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </nav>
+
+            <li class="nav-item d-block d-lg-none">
+                <a class="nav-link nav-icon search-bar-toggle " href="#">
+                    <i class="bi bi-search">&nbsp;<span style="font-style: normal;">Search</span></i>
+                </a>
+
+            </li>
+        </div>
+        <!-- End Page Title -->
+
+        <section class="section dashboard">
+           
+            <div class="row">
+
+                <!-- Left side columns -->
+                <div class="col-lg-8">
+                    <div class="row scrollable-row" id="companyList">
+
+                        <!-- Company portifolios are displayed here -->
+
+
+                    </div>
+                    <div class="progress mt-3">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                            aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+
+                    <div class="row">
+                        <!--Malawi Stock Brokers -->
+                        <div class="col-12">
+                            <div class="card recent-sales overflow-auto">
+
+                                <div class="filter">
+                                    <a class="icon" href="#" data-bs-toggle="dropdown"><i
+                                            class="bi bi-three-dots"></i></a>
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                        <li class="dropdown-header text-start">
+                                            <h6>Filter</h6>
+                                        </li>
+
+                                        <li><a class="dropdown-item" href="#">Today</a></li>
+                                        <li><a class="dropdown-item" href="#">Yesterday</a></li>
+                                        <li><a class="dropdown-item" href="#">Previous day</a></li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="card-body">
+                                    <h5 class="card-title">Stock Broker <span>| Today</span></h5>
+
+                                    <table class="table table-borderless">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">ID</th>
+                                                <th scope="col">Symbol</th>
+                                                <th scope="col">Price(USD)</th>
+                                                <th scope="col">% Change</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row"><a href="#">2457</a></th>
+                                                <td>ZFP LTD </td>
+                                                <td><a href="#" class="text-primary">100.05</a></td>
+                                                <td>0</td>
+                                                <td><span class="badge bg-success">Profitable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><a href="#">2147</a></th>
+                                                <td>BHR</td>
+                                                <td><a href="#" class="text-primary">10.00</a></td>
+                                                <td>0</td>
+                                                <td><span class="badge bg-warning">Declining</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><a href="#">2049</a></th>
+                                                <td>ILL LiMITED</td>
+                                                <td><a href="#" class="text-primary">1,121.42</a></td>
+                                                <td>0</td>
+                                                <td><span class="badge bg-success">Profitable</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><a href="#">2644</a></th>
+                                                <td>MPIC</td>
+                                                <td><a href="#" class="text-primar">20.58</a></td>
+                                                <td>0</td>
+                                                <td><span class="badge bg-danger">Loss</span></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row"><a href="#">2644</a></th>
+                                                <td>TIME BANK</td>
+                                                <td><a href="#" class="text-primary">2000.29</a></td>
+                                                <td>0</td>
+                                                <td><span class="badge bg-success">Profitable</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- End Stock Brokers-->
+
+                    </div>
+                </div>
+                <!-- End Left side columns -->
+
+                <!-- Right side columns -->
+                <div class="col-lg-4">
+
+                    <!-- Recent Activity -->
+                    <div class="card">
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                                <li><a class="dropdown-item" href="#">This Total</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Recent Activity <span>| This Month</span></h5>
+
+                            <div class="activity">
+
+                                <div class="activity-item d-flex">
+                                    <div class="activite-label">Recent</div>
+                                    <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
+                                    <div class="activity-content">
+                                        Your account was succefully created, upgrade your account to premium to access
+                                        unlimited list of portifolios in your area
+                                    </div>
+                                </div>
+                                <!-- End activity item-->
+
+                                <div class="activity-item d-flex">
+                                    <div class="activite-label">Recent</div>
+                                    <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
+                                    <div class="activity-content">
+                                        Use the tab on your right pane to edit and update your account details
+                                    </div>
+                                </div>
+                                <!-- End activity item-->
+
+                                <div class="activity-item d-flex">
+                                    <div class="activite-label">Recent</div>
+                                    <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
+                                    <div class="activity-content">
+                                        Open menu slide to access more features
+                                    </div>
+                                </div>
+                                <!-- End activity item-->
+
+
+                                <!-- End activity item-->
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Recent Activity -->
+
+
+                    <!-- Offers & Promos -->
+                    <div class="card">
+                        <div class="filter">
+                            <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                                <li class="dropdown-header text-start">
+                                    <h6>Filter</h6>
+                                </li>
+
+                                <li><a class="dropdown-item" href="#">Today</a></li>
+                                <li><a class="dropdown-item" href="#">This Month</a></li>
+                                <li><a class="dropdown-item" href="#">This Year</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="card-body pb-0">
+                            <h5 class="card-title">Offers &amp; Promotions <span>| This Month</span></h5>
+
+                            <div class="news">
+                                <div class="post-item clearfix">
+                                    <img src="assets/img/ads.jpg" alt="">
+                                    <h4><a href="#">Zitheka set to introduce new packages</a></h4>
+                                    <p>Zitheka prepares to launch a new package for civil servants</p>
+                                </div>
+
+                                <div class="post-item clearfix">
+                                    <img src="assets/img/ads.jpg" alt="">
+                                    <h4><a href="#">Learn-to-code introduces software development online lessons</a>
+                                    </h4>
+                                    <p>Get hands on web app development with learn-to-code</p>
+                                </div>
+                                <div class="post-item clearfix">
+                                    <script async
+                                        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+                                        crossorigin="anonymous"></script>
+                                    <ins class="adsbygoogle" style="display:block" data-ad-format="autorelaxed"
+                                        data-ad-client="ca-pub-9841032129636382" data-ad-slot="8099265104"></ins>
+                                    <script>
+                                        (adsbygoogle = window.adsbygoogle || []).push({});
+                                    </script>
+                                    </div>
+
+
+                            </div>
+                            <!-- End of promos-->
+
+                        </div>
+                    </div>
+                    <!-- End News & Updates -->
+
+
+                </div>
+                <!-- End Right side columns -->
+
+            </div>
+        </section>
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="copyright">
+            &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+            <p>@2023</p>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.min.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/verify-user.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/user.js"></script>
+    <script>
+        // Function to get the count of unread messages
+        async function getUnreadMessageCount(userId) {
+            try {
+                const response = await fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_unread_message_count/${userId}`);
+                const data = await response.json();
+                return data.unread_count;
+            } catch (error) {
+                console.error('Error fetching unread message count:', error);
+                return 0;
+            }
+        }
+
+        // Update the unread message count
+        async function updateUnreadMessageCount(userId) {
+            const unreadMessageCountElement = document.getElementById('unreadMessageCount');
+
+            try {
+                const count = await getUnreadMessageCount(userId);
+                unreadMessageCountElement.textContent = count;
+            } catch (error) {
+                console.error('Error updating unread message count:', error);
+            }
+        }
+
+        // Assume the user ID is 28 for demonstration purposes
+        const userData = sessionStorage.getItem('userData');
+        const user = JSON.parse(userData);
+        const userId = user.id;
+
+        // Update the unread message count when the page loads
+        updateUnreadMessageCount(userId);
+
+        // You can also update the count periodically (e.g., every 5 seconds)
+        setInterval(() => {
+            updateUnreadMessageCount(userId);
+        }, 5000);
+    </script>
+
+    <script>
+        function checkSelection() {
+            var categorySelect = document.getElementById("categorySelect");
+            var modal = document.getElementById("myModal");
+
+            if (categorySelect.value === "Investors") {
+                modal.style.display = "block";
+            }
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+    </script>
+
+</body>
+
+</html>

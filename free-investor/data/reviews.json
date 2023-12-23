@@ -1,0 +1,72 @@
+[{
+        "id": 1,
+        "userId": "4",
+        "userName": "Joseph Nkasa",
+        "companyId": "1",
+        "companyName": "Millet Finance",
+        "review": "Smart Services",
+        "date": "11-8-2023"
+
+    },
+    {
+        "id": 2,
+        "userId": "3",
+        "userName": "Memory Kadengu",
+        "companyId": "1",
+        "companyName": "Millet Finance",
+        "review": "I love it",
+        "date": "11-6-2023"
+
+    },
+    {
+        "id": 3,
+        "userId": "10",
+        "userName": "King Kunta",
+        "companyId": "2",
+        "companyName": "Katenga Loans",
+        "review": "Smart But slow",
+        "date": "11-8-2023"
+
+    },
+    {
+        "id": 4,
+        "userId": "11",
+        "userName": "James Lee",
+        "companyId": "2",
+        "companyName": "Katenga Loans",
+        "review": "Love it smart",
+        "date": "11-4-2023"
+
+    },
+    {
+        "id": 5,
+        "userId": "4",
+        "userName": "Joseph Nkasa",
+        "companyId": "3",
+        "companyName": "MediPrenuer Loans",
+        "review": "No words",
+        "date": "11-8-2023"
+
+    },
+    {
+        "id": 6,
+        "userId": "3",
+        "userName": "Memory Kadengu",
+        "companyId": "3",
+        "companyName": "MediPrenuer Loans",
+        "review": "Eish",
+        "date": "11-6-2023"
+
+    },
+    {
+        "id": 7,
+        "userId": "10",
+        "userName": "King Kunta",
+        "companyId": "3",
+        "companyName": "MediPrenuer Loans",
+        "review": "Mistake",
+        "date": "11-8-2023"
+
+    }
+
+]

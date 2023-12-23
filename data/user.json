@@ -1,0 +1,40 @@
+[{
+        "id": 1,
+        "firstName": "Ronnex",
+        "lastName": "Wataya",
+        "phone": "991448701",
+        "email": "millet@mail.com",
+        "password": "1234",
+        "category": "Micro Lender",
+        "status": "freemium",
+        "country": "Malawi",
+        "photo": "",
+        "created": "2022-07-01 15:54:02"
+    },
+    {
+        "id": 2,
+        "firstName": "Triumph",
+        "lastName": "Kanazawa",
+        "phone": "991448713",
+        "email": "user@mail.com",
+        "password": "1234",
+        "category": "General",
+        "status": "freemium",
+        "country": "Malawi",
+        "photo": "",
+        "created": "2022-07-01 15:54:02"
+    },
+    {
+        "id": 3,
+        "firstName": "James",
+        "lastName": "King",
+        "phone": "881800440",
+        "email": "user2@mail.com",
+        "password": "1234",
+        "category": "General",
+        "status": "premium",
+        "country": "Malawi",
+        "photo": "",
+        "created": "2022-07-01 15:54:02"
+    }
+]

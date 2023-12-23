@@ -1,0 +1,36 @@
+[{
+        "id": 1,
+        "companyId": 1,
+        "email": "millet@mail.com",
+        "whatsapp": "0991448707",
+        "phone": "0991448707"
+    },
+    {
+        "id": 2,
+        "companyId": 2,
+        "email": "katenga@mail.com",
+        "whatsapp": "0887355195",
+        "phone": "0887355195"
+    },
+    {
+        "id": 3,
+        "companyId": 3,
+        "email": "mediprenuer@mail.com",
+        "whatsapp": "0991448707",
+        "phone": "0991448707"
+    },
+    {
+        "id": 4,
+        "companyId": 4,
+        "email": "droidfx@mail.com",
+        "whatsapp": "0991448707",
+        "phone": "0991448707"
+    },
+    {
+        "id": 5,
+        "companyId": 5,
+        "email": "zitheka@mail.com",
+        "whatsapp": "0991448707",
+        "phone": "0991448707"
+    }
+]
