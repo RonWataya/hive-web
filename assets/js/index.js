@@ -41,23 +41,23 @@ document.addEventListener("DOMContentLoaded", function () {
         const redirectDelay = 1000; // Adjust the delay time if needed
 
         if (user.category === "General") {
-            const redirectUrl = (user.status === "freemium") ? "/free-general/index.html" : "/general/index.html";
+            const redirectUrl = (user.status === "freemium") ? "/free-general/index" : "/general/index";
         
             setTimeout(() => {
                 window.location.href = redirectUrl;
             }, redirectDelay);
         } else if (user.category === "Micro Lender") {
-          const redirectUrl = (user.status === "freemium") ? "/free-business/index.html" : "/business/index.html";
+          const redirectUrl = (user.status === "freemium") ? "/free-business/index" : "/business/index";
             setTimeout(() => {
               window.location.href = redirectUrl;
             }, redirectDelay);
         } else if (user.category === "Microfinancier") {
-          const redirectUrl = (user.status === "freemium") ? "/free-business/index.html" : "/business/index.html";
+          const redirectUrl = (user.status === "freemium") ? "/free-business/index" : "/business/index";
           setTimeout(() => {
             window.location.href = redirectUrl;
           }, redirectDelay);
       } else if (user.category === "Investor") {
-        const redirectUrl = (user.status === "freemium") ? "/free-investor/index.html" : "/investor/index.html";
+        const redirectUrl = (user.status === "freemium") ? "/free-investor/index" : "/investor/index";
         setTimeout(() => {
           window.location.href = redirectUrl;
         }, redirectDelay);
