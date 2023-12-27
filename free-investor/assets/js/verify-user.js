@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateSessionStorage() {
     // Fetch API endpoint to get updated user data based on phoneId
-    fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/${phoneId}`)
+    fetch(`https://moneyhive-mw.com:2000/api/users/${phoneId}`)
       .then((response) => response.json())
       .then((updatedUserData) => {
         // Update session storage with the new data

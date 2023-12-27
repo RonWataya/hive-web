@@ -95,7 +95,7 @@ updateIdeaProfile();
 
       // Fetch API endpoint to update user data in the backend
       try {
-        const response = await fetch("http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/ideas/create", {
+        const response = await fetch("https://moneyhive-mw.com:2000/api/ideas/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -170,7 +170,7 @@ async function UpdateBusiness() {
     };
 
     // Your existing fetch code
-    const response = await fetch("http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/ideas/update", {
+    const response = await fetch("https://moneyhive-mw.com:2000/api/ideas/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -209,7 +209,7 @@ async function DeleteBusiness(){
     };
     try {
       const response = await fetch(
-        "http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/ideas/delete",
+        "https://moneyhive-mw.com:2000/api/ideas/delete",
         {
           method: "POST",
           headers: {
@@ -247,7 +247,7 @@ async function updateIdeaProfile() {
     const user = JSON.parse(userData);
     const userId = user.id;
 
-    const response = await fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/ideas/${userId}`);
+    const response = await fetch(`https://moneyhive-mw.com:2000/api/users/ideas/${userId}`);
     const updatedData = await response.json();
 
     // Directly update session storage with the new data

@@ -39,57 +39,62 @@
     body {
       font-family: Arial, sans-serif;
       display: flex;
-      height: 100vh;
+      flex-direction: column;
+      min-height: 100vh;
       margin: 0;
     }
 
-    #messageContainer {
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
       display: flex;
-      flex: 1;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
     #messagesContainer {
-  width: 300px;
-  height: 600px;
-  overflow-y: auto;
-  background-color: #f1f1f1;
-  padding: 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-
-
-
-    #messages {
-      width: 300px;
+      width: 100%;
+      overflow-y: auto;
       background-color: #f1f1f1;
       padding: 20px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-      overflow-y: auto;
-    }
-
-    #messageList {
-      list-style-type: none;
-      padding: 0;
-      cursor: pointer;
-    }
-
-    #messageList li {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    #messageList li:hover {
-      background-color: #ddd;
     }
 
     #messageContent {
       flex: 1;
-      padding: 20px;
+      margin-top: 20px;
     }
 
     #chatContent {
       width: 100%;
-      margin-top: 10px;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+      margin-bottom: 10px;
+    }
+
+    #sendButton, #endChatButton {
+      padding: 10px 20px;
+      background-color: cadetblue;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #endChatButton {
+      background-color: rgb(226, 85, 53);
     }
 
     #chatHistory {
@@ -100,54 +105,24 @@
       border-radius: 5px;
     }
 
-    textarea {
-      margin-top: 20px;
-      width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      resize: none;
-    }
-
-    #sendButton {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: cadetblue;
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #endChatButton {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: rgb(226, 85, 53);
-      color: #ffffff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    #sendButton:hover {
-      background-color: #4682b4;
-    }
-
-    #chatHistory {
-      margin-top: 20px;
-    }
-
     #chatHistory p {
       margin: 5px 0;
     }
 
-    .unread {
-      color: blue;
-      font-weight: bold;
-    }
+    @media only screen and (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
 
-    .read {
-      color: black;
+      #messagesContainer, #messageContent {
+        width: 100%;
+      }
+
+      #sendButton, #endChatButton {
+        width: 100%;
+        margin-right: 0;
+      }
     }
   </style>
 
@@ -160,7 +135,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index" class="logo d-flex align-items-center">
         <img src="assets/img/hive-cropped.png" alt="">
       </a>
 
@@ -180,7 +155,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="index">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
@@ -188,13 +163,13 @@
       <!-- End Home Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="payment.html">
+        <a class="nav-link collapsed" href="payment">
             <i class="bi bi-card-list"></i>
             <span>Upgrade your account</span>
         </a>
     </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="privacy.html">
+        <a class="nav-link collapsed" href="privacy">
           <i class="bi bi-card-list"></i>
           <span>Privacy Policy</span>
         </a>
@@ -206,13 +181,13 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="support.html">
+        <a class="nav-link collapsed" href="support">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Support</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="about.html">
+        <a class="nav-link collapsed" href="about">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Founders</span>
         </a>
@@ -228,22 +203,20 @@
   <!-- End Sidebar-->
 
   <main id="main" class="main">
-    <div id="messageContainer">
-      <div id="messagesContainer">
-        <h2>Messages</h2>
-        <ul id="messageList"></ul>
-      </div>
+    <div id="messagesContainer">
+      <h2>Messages</h2>
+      <ul id="messageList"></ul>
+    </div>
 
-      <div id="messageContent">
-        <h2 style="color: cadetblue;font-weight: 600;">Inbox</h2>
+    <div id="messageContent">
+      <h2 style="color: cadetblue; font-weight: 600;">Inbox</h2>
 
-        <div id="selectedMessage"></div>
-        <h3>Your chat history</h3>
-        <div id="chatHistory"></div>
-        <textarea id="chatContent" rows="4" cols="50"></textarea><br>
-        <button id="sendButton" onclick="sendChat()">Send Chat</button>
-        <button id="endChatButton">End Chat</button>
-      </div>
+      <div id="selectedMessage"></div>
+      <h3>Your chat history</h3>
+      <div id="chatHistory"></div>
+      <textarea id="chatContent" rows="4" cols="50"></textarea>
+      <button id="sendButton" onclick="sendChat()">Send Chat</button>
+      <button id="endChatButton">End Chat</button>
     </div>
   </main>
   <!-- End #main -->
@@ -278,7 +251,7 @@
     let selectedUserId = null;
 
     function getMessages(userId) {
-  fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_messages/${userId}`)
+  fetch(`https://moneyhive-mw.com:3000/get_messages/${userId}`)
     .then(response => response.json())
     .then(messages => {
       const messageList = document.getElementById('messageList');
@@ -317,7 +290,7 @@
 }
 
     function getChatHistory(userId, otherUserId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_chat_history/${userId}/${otherUserId}`)
+      fetch(`https://moneyhive-mw.com:3000/get_chat_history/${userId}/${otherUserId}`)
         .then(response => response.json())
         .then(history => {
           const chatHistory = document.getElementById('chatHistory');
@@ -335,7 +308,7 @@
     }
 
     function markAsRead(messageId, userId, receiverId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
+      fetch(`https://moneyhive-mw.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
         .then(response => response.json())
         .then(result => {
           console.log(result);
@@ -368,7 +341,7 @@
       const senderName = userName; // Assuming you have user's name stored in userName
       const messageContent = document.getElementById('chatContent').value;
 
-      fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/send_message', {
+      fetch('https://moneyhive-mw.com:3000/send_message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -412,7 +385,7 @@
             // Assuming selectedUserId is set when a message is selected
             const receiverId = selectedUserId;
 
-            fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/end_chat/${userId}/${receiverId}`, {
+            fetch(`https://moneyhive-mw.com:3000/end_chat/${userId}/${receiverId}`, {
                 method: 'DELETE',
             })
                 .then(response => response.json())

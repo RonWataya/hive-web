@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Fetch API endpoint to update user data in the backend
       try {
-        const response = await fetch("http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/update", {
+        const response = await fetch("https://moneyhive-mw.com:2000/api/users/update", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update session storage with new data
   function updateSessionStorage(phoneId) {
     // Fetch API endpoint to get updated user data based on phoneId
-    fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/${phoneId}`)
+    fetch(`https://moneyhive-mw.com:2000/api/users/${phoneId}`)
       .then((response) => response.json())
       .then((updatedUserData) => {
         // Update session storage with the new data
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await fetch(
-          "http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/passwordReset",
+          "https://moneyhive-mw.com:2000/api/users/passwordReset",
           {
             method: "POST",
             headers: {
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to update session storage with new data
   function updateSessionStorage(phoneId) {
     // Fetch API endpoint to get updated user data based on phoneId
-    fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/${phoneId}`)
+    fetch(`https://moneyhive-mw.com:2000/api/users/${phoneId}`)
       .then((response) => response.json())
       .then((updatedUserData) => {
         // Update session storage with the new data
@@ -259,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await fetch(
-          "http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/deleteRequest",
+          "https://moneyhive-mw.com:2000/api/users/deleteRequest",
           {
             method: "POST",
             headers: {

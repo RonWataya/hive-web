@@ -102,7 +102,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index" class="logo d-flex align-items-center">
         <img src="assets/img/hive-cropped.png" alt="" />
       </a>
     </div>
@@ -185,7 +185,7 @@
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
                 You may have new messages
-                <a href="chat.html"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                <a href="chat"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             <li>
                 <hr class="dropdown-divider">
@@ -211,7 +211,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="users-profile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -220,7 +220,7 @@
               <hr class="dropdown-divider">
             </li>
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="business-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="business-profile">
                 <i class="bi bi-gear"></i>
                 <span>Business Profile</span>
               </a>
@@ -230,7 +230,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="business-idea.html">
+              <a class="dropdown-item d-flex align-items-center" href="business-idea">
                 <i class="bi bi-gear"></i>
                 <span>Business Idea</span>
               </a>
@@ -242,7 +242,7 @@
 
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="support">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
@@ -252,7 +252,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="../index.html">
+              <a class="dropdown-item d-flex align-items-center" href="../index">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </a>
@@ -273,7 +273,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="index">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
@@ -283,32 +283,32 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="payment.html">
+        <a class="nav-link collapsed" href="payment">
           <i class="bi bi-card-list"></i>
           <span>Upgrade your account</span>
         </a>
       </li>
       <!-- End Register Page Nav -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="privacy.html">
+        <a class="nav-link collapsed" href="privacy">
           <i class="bi bi-card-list"></i>
           <span>Privacy Policy</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.html">
+        <a class="nav-link collapsed" href="faq">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>FAQ</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="support.html">
+        <a class="nav-link collapsed" href="support">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Support</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="about.html">
+        <a class="nav-link collapsed" href="about">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Founders</span>
         </a>
@@ -328,8 +328,8 @@
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active"><a href="user-profile.html">Refresh<i class="fa fa-refresh"></i></a></li>
+          <li class="breadcrumb-item"><a href="index">Home</a></li>
+          <li class="breadcrumb-item active"><a href="user-profile">Refresh<i class="fa fa-refresh"></i></a></li>
         </ol>
       </nav>
     </div>
@@ -702,7 +702,7 @@
     // Function to get the count of unread messages
     async function getUnreadMessageCount(userId) {
         try {
-            const response = await fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_unread_message_count/${userId}`);
+            const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
             const data = await response.json();
             return data.unread_count;
         } catch (error) {
