@@ -56,25 +56,20 @@
     main {
       flex: 1;
       display: flex;
-      margin: 20px;
+      flex-direction: column;
+      padding: 20px;
     }
 
     #messagesContainer {
-      flex: 1;
+      width: 70%;
+      max-height: 70vh;
+      /* Set the maximum height */
       overflow-y: auto;
       background-color: #f1f1f1;
       padding: 20px;
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     }
 
-    #inboxContainer {
-      flex: 1;
-      display: none;
-      overflow-y: auto;
-      background-color: #f1f1f1;
-      padding: 20px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    }
 
     #messageContent {
       flex: 1;
@@ -82,7 +77,7 @@
     }
 
     #chatContent {
-      width: 100%;
+      width: 70%;
       padding: 10px;
       box-sizing: border-box;
       border: 1px solid #ddd;
@@ -119,38 +114,25 @@
     }
 
     @media only screen and (max-width: 600px) {
-      main {
+      header {
         flex-direction: column;
+        align-items: flex-start;
       }
 
       #messagesContainer,
-      #inboxContainer {
-        width: 100%;
+      #messageContent {
+        width: 70%;
       }
 
-      #inboxContainer {
-        margin-top: 20px;
-      }
-
-      #sendButton,
-      #endChatButton {
-        width: 100%;
+      #sendButton {
+        width: 50%;
         margin-right: 0;
       }
 
-      #closeButton {
-        width: 100%;
+      #endChatButton {
+        width: 50%;
+        margin-top: 10;
       }
-    }
-
-    #closeButton {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background-color: #333;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
     }
   </style>
 
@@ -228,22 +210,12 @@
   <main id="main" class="main">
     <div id="messagesContainer">
       <h2>Messages</h2>
-      <ul id="messageList">
-        <!-- Use a loop to dynamically create list items -->
-        <!-- Assuming 'messages' is an array of messages from the backend -->
-        <!-- You should replace this loop with your actual backend data structure -->
-        <!-- Each message should have an id and name property at least -->
-        <% messages.forEach(message=> { %>
-          <li onclick="showInbox('<%= message.id %>')">
-            <%= message.name %>
-          </li>
-          <% }); %>
-      </ul>
+      <ul id="messageList"></ul>
     </div>
 
-    <div id="inboxContainer">
-      <button id="closeButton" onclick="closeInbox()">Close</button>
+    <div id="messageContent">
       <h2 style="color: cadetblue; font-weight: 600;">Inbox</h2>
+
       <div id="selectedMessage"></div>
       <h3>Your chat history</h3>
       <div id="chatHistory"></div>
@@ -280,19 +252,6 @@
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <!-- Template Main JS File -->
-  <script>
-     function showInbox(messageId) {
-    document.getElementById('inboxContainer').style.display = 'block';
-    // You may want to load the selected message details here using the messageId
-    // For example, you can fetch additional details based on the messageId
-    // fetchMessageDetails(messageId);
-  }
-
-
-    function closeInbox() {
-      document.getElementById('inboxContainer').style.display = 'none';
-    }
-  </script>
   <script>
     let selectedUserId = null;
 
