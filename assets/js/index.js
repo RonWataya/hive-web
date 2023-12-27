@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const loginMessage = document.getElementById("loginMessage");
-  const userDataUrl = "http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/api/users";
+  const userDataUrl = "https://moneyhive-mw.com:3000/api/users";
 
   loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();

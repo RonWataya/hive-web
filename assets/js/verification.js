@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Send the verification data to the backend using fetch or another method
                     // Replace 'your-backend-url' with your actual backend URL
-                    fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/verification', {
+                    fetch('https://moneyhive-mw.com:3000/verification', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     formData.verificationCode = codeValue;
 
                     // Send the formData to the backend
-                    fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/api/register', {
+                    fetch('https://moneyhive-mw.com:3000/api/register', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

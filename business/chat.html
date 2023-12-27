@@ -274,7 +274,7 @@
     let selectedUserId = null;
 
     function getMessages(userId) {
-  fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_messages/${userId}`)
+  fetch(`https://moneyhive-mw.com:3000/get_messages/${userId}`)
     .then(response => response.json())
     .then(messages => {
       const messageList = document.getElementById('messageList');
@@ -313,7 +313,7 @@
 }
 
     function getChatHistory(userId, otherUserId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_chat_history/${userId}/${otherUserId}`)
+      fetch(`https://moneyhive-mw.com:3000/get_chat_history/${userId}/${otherUserId}`)
         .then(response => response.json())
         .then(history => {
           const chatHistory = document.getElementById('chatHistory');
@@ -331,7 +331,7 @@
     }
 
     function markAsRead(messageId, userId, receiverId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
+      fetch(`https://moneyhive-mw.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
         .then(response => response.json())
         .then(result => {
           console.log(result);
@@ -364,7 +364,7 @@
       const senderName = userName; // Assuming you have user's name stored in userName
       const messageContent = document.getElementById('chatContent').value;
 
-      fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/send_message', {
+      fetch('https://moneyhive-mw.com:3000/send_message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -408,7 +408,7 @@
             // Assuming selectedUserId is set when a message is selected
             const receiverId = selectedUserId;
 
-            fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/end_chat/${userId}/${receiverId}`, {
+            fetch(`https://moneyhive-mw.com:3000/end_chat/${userId}/${receiverId}`, {
                 method: 'DELETE',
             })
                 .then(response => response.json())
