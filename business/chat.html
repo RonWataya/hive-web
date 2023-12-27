@@ -91,7 +91,8 @@
       margin-bottom: 10px;
     }
 
-    #sendButton, #endChatButton {
+    #sendButton,
+    #endChatButton {
       padding: 10px 20px;
       background-color: cadetblue;
       color: #ffffff;
@@ -122,7 +123,8 @@
         flex-direction: column;
       }
 
-      #messagesContainer, #inboxContainer {
+      #messagesContainer,
+      #inboxContainer {
         width: 100%;
       }
 
@@ -130,14 +132,17 @@
         margin-top: 20px;
       }
 
-      #sendButton, #endChatButton {
+      #sendButton,
+      #endChatButton {
         width: 100%;
         margin-right: 0;
       }
+
       #closeButton {
         width: 100%;
       }
     }
+
     #closeButton {
       margin-top: 10px;
       padding: 10px 20px;
@@ -147,8 +152,6 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-   
   </style>
 
 </head>
@@ -187,7 +190,7 @@
       </li>
       <!-- End Home Nav -->
 
-     
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="privacy">
           <i class="bi bi-card-list"></i>
@@ -226,9 +229,15 @@
     <div id="messagesContainer">
       <h2>Messages</h2>
       <ul id="messageList">
-        <li onclick="showInbox()">Message 1</li>
-        <li onclick="showInbox()">Message 2</li>
-        <!-- Add more messages as needed -->
+        <!-- Use a loop to dynamically create list items -->
+        <!-- Assuming 'messages' is an array of messages from the backend -->
+        <!-- You should replace this loop with your actual backend data structure -->
+        <!-- Each message should have an id and name property at least -->
+        <% messages.forEach(message=> { %>
+          <li onclick="showInbox('<%= message.id %>')">
+            <%= message.name %>
+          </li>
+          <% }); %>
       </ul>
     </div>
 
@@ -272,10 +281,13 @@
 
   <!-- Template Main JS File -->
   <script>
-    function showInbox() {
-      document.getElementById('inboxContainer').style.display = 'block';
-      // You may want to load the selected message details here
-    }
+     function showInbox(messageId) {
+    document.getElementById('inboxContainer').style.display = 'block';
+    // You may want to load the selected message details here using the messageId
+    // For example, you can fetch additional details based on the messageId
+    // fetchMessageDetails(messageId);
+  }
+
 
     function closeInbox() {
       document.getElementById('inboxContainer').style.display = 'none';
@@ -285,43 +297,43 @@
     let selectedUserId = null;
 
     function getMessages(userId) {
-  fetch(`https://moneyhive-mw.com:3000/get_messages/${userId}`)
-    .then(response => response.json())
-    .then(messages => {
-      const messageList = document.getElementById('messageList');
+      fetch(`https://moneyhive-mw.com:3000/get_messages/${userId}`)
+        .then(response => response.json())
+        .then(messages => {
+          const messageList = document.getElementById('messageList');
 
-      // Clear existing messages
-      messageList.innerHTML = '';
+          // Clear existing messages
+          messageList.innerHTML = '';
 
-      // Reverse the order of messages to display the most recent ones first
-      
+          // Reverse the order of messages to display the most recent ones first
 
-      messages.forEach(message => {
-        const time = message.timestamp; // Assuming time is a timestamp in milliseconds
 
-        const formattedTime = new Date(time).toLocaleString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-          hour12: true,
-        });
-        const senderName = message.name;
-        const content = message.content;
-        const isRead = message.is_read;
-        const li = document.createElement('li');
+          messages.forEach(message => {
+            const time = message.timestamp; // Assuming time is a timestamp in milliseconds
 
-        li.innerHTML = `<strong>From:</strong> ${senderName},<span style="font-style:italic; color: cadetblue;"><strong> Message:</strong></span> <span style="color:grey;">${content}</span><br><span style="font-size:10px;">${formattedTime}</span>`;
-        li.setAttribute('data-user-id', message.sender_id);
-        li.setAttribute('data-receiver-id', message.receiver_id);
-        li.classList.add(isRead ? 'read' : 'unread');
-        li.onclick = () => openChat(message);
-        messageList.appendChild(li);
-      });
-    })
-    .catch(error => console.error('Error fetching messages:', error));
-}
+            const formattedTime = new Date(time).toLocaleString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric',
+              hour12: true,
+            });
+            const senderName = message.name;
+            const content = message.content;
+            const isRead = message.is_read;
+            const li = document.createElement('li');
+
+            li.innerHTML = `<strong>From:</strong> ${senderName},<span style="font-style:italic; color: cadetblue;"><strong> Message:</strong></span> <span style="color:grey;">${content}</span><br><span style="font-size:10px;">${formattedTime}</span>`;
+            li.setAttribute('data-user-id', message.sender_id);
+            li.setAttribute('data-receiver-id', message.receiver_id);
+            li.classList.add(isRead ? 'read' : 'unread');
+            li.onclick = () => openChat(message);
+            messageList.appendChild(li);
+          });
+        })
+        .catch(error => console.error('Error fetching messages:', error));
+    }
 
     function getChatHistory(userId, otherUserId) {
       fetch(`https://moneyhive-mw.com:3000/get_chat_history/${userId}/${otherUserId}`)
@@ -415,51 +427,47 @@
 
 
     function endChat() {
-        if (confirm("Are you sure you want to end this chat?")) {
-            // Assuming selectedUserId is set when a message is selected
-            const receiverId = selectedUserId;
+      if (confirm("Are you sure you want to end this chat?")) {
+        // Assuming selectedUserId is set when a message is selected
+        const receiverId = selectedUserId;
 
-            fetch(`https://moneyhive-mw.com:3000/end_chat/${userId}/${receiverId}`, {
-                method: 'DELETE',
-            })
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result);
-                    // Remove the chat from the UI
-                    const messageList = document.getElementById('messageList');
-                    const listItem = document.querySelector(`#messageList li[data-receiver-id="${receiverId}"]`);
-                    if (listItem) {
-                        messageList.removeChild(listItem);
-                    }
-                    // Clear the chat content
-                    document.getElementById('selectedMessage').innerHTML = '';
-                    document.getElementById('chatHistory').innerHTML = '';
-                    // Reset selectedUserId
-                    selectedUserId = null;
-                })
-                .catch(error => console.error('Error ending chat:', error));
-        }
+        fetch(`https://moneyhive-mw.com:3000/end_chat/${userId}/${receiverId}`, {
+          method: 'DELETE',
+        })
+          .then(response => response.json())
+          .then(result => {
+            console.log(result);
+            // Remove the chat from the UI
+            const messageList = document.getElementById('messageList');
+            const listItem = document.querySelector(`#messageList li[data-receiver-id="${receiverId}"]`);
+            if (listItem) {
+              messageList.removeChild(listItem);
+            }
+            // Clear the chat content
+            document.getElementById('selectedMessage').innerHTML = '';
+            document.getElementById('chatHistory').innerHTML = '';
+            // Reset selectedUserId
+            selectedUserId = null;
+          })
+          .catch(error => console.error('Error ending chat:', error));
+      }
     }
 
     // Add an event listener to your "End Chat" button
     const endChatButton = document.getElementById('endChatButton');
     if (endChatButton) {
-        endChatButton.addEventListener('click', endChat);
+      endChatButton.addEventListener('click', endChat);
     }
 
   </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
-crossorigin="anonymous"></script>
-<!-- displa -->
-<ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-9841032129636382"
-data-ad-slot="8635802794"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+    crossorigin="anonymous"></script>
+  <!-- displa -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9841032129636382" data-ad-slot="8635802794"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 
 </body>
 
