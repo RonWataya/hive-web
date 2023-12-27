@@ -23,7 +23,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
             const userId = user.id;
             Price = '1.99';
 
-            const response = await fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:4000/api/stripe', {
+            const response = await fetch('https://moneyhive-mw.com:4000/api/stripe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
             const userId = user.id;
             const price = '1.99'; // Set the correct price value
     
-            const response = await fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:4000/create_order', {
+            const response = await fetch('https://moneyhive-mw.com:4000/create_order', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

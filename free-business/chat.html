@@ -160,7 +160,7 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <i class="bi bi-list toggle-sidebar-btn"></i>
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="index" class="logo d-flex align-items-center">
         <img src="assets/img/hive-cropped.png" alt="">
       </a>
 
@@ -180,7 +180,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="index">
           <i class="bi bi-grid"></i>
           <span>Home</span>
         </a>
@@ -189,32 +189,32 @@
 
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="payment.html">
+        <a class="nav-link collapsed" href="payment">
             <i class="bi bi-card-list"></i>
             <span>Upgrade your account</span>
         </a>
     </li>
     
       <li class="nav-item">
-        <a class="nav-link collapsed" href="privacy.html">
+        <a class="nav-link collapsed" href="privacy">
           <i class="bi bi-card-list"></i>
           <span>Privacy Policy</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="faq.html">
+        <a class="nav-link collapsed" href="faq">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>FAQ</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="support.html">
+        <a class="nav-link collapsed" href="support">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Support</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="about.html">
+        <a class="nav-link collapsed" href="about">
           <i class="bi bi-box-arrow-in-right"></i>
           <span>Founders</span>
         </a>
@@ -319,7 +319,7 @@
 }
 
     function getChatHistory(userId, otherUserId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/get_chat_history/${userId}/${otherUserId}`)
+      fetch(`https://moneyhive-mw.com:3000/get_chat_history/${userId}/${otherUserId}`)
         .then(response => response.json())
         .then(history => {
           const chatHistory = document.getElementById('chatHistory');
@@ -337,7 +337,7 @@
     }
 
     function markAsRead(messageId, userId, receiverId) {
-      fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
+      fetch(`https://moneyhive-mw.com:3000/mark_as_read/${messageId}`, { method: 'PUT' })
         .then(response => response.json())
         .then(result => {
           console.log(result);
@@ -370,7 +370,7 @@
       const senderName = userName; // Assuming you have user's name stored in userName
       const messageContent = document.getElementById('chatContent').value;
 
-      fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/send_message', {
+      fetch('https://moneyhive-mw.com:3000/send_message', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -414,7 +414,7 @@
             // Assuming selectedUserId is set when a message is selected
             const receiverId = selectedUserId;
 
-            fetch(`http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/end_chat/${userId}/${receiverId}`, {
+            fetch(`https://moneyhive-mw.com:3000/end_chat/${userId}/${receiverId}`, {
                 method: 'DELETE',
             })
                 .then(response => response.json())
