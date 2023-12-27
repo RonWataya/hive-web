@@ -56,12 +56,20 @@
     main {
       flex: 1;
       display: flex;
-      flex-direction: column;
-      padding: 20px;
+      margin: 20px;
     }
 
     #messagesContainer {
-      width: 100%;
+      flex: 1;
+      overflow-y: auto;
+      background-color: #f1f1f1;
+      padding: 20px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    #inboxContainer {
+      flex: 1;
+      display: none;
       overflow-y: auto;
       background-color: #f1f1f1;
       padding: 20px;
@@ -110,20 +118,37 @@
     }
 
     @media only screen and (max-width: 600px) {
-      header {
+      main {
         flex-direction: column;
-        align-items: flex-start;
       }
 
-      #messagesContainer, #messageContent {
+      #messagesContainer, #inboxContainer {
         width: 100%;
+      }
+
+      #inboxContainer {
+        margin-top: 20px;
       }
 
       #sendButton, #endChatButton {
         width: 100%;
         margin-right: 0;
       }
+      #closeButton {
+        width: 100%;
+      }
     }
+    #closeButton {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+   
   </style>
 
 </head>
@@ -162,12 +187,7 @@
       </li>
       <!-- End Home Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="payment">
-            <i class="bi bi-card-list"></i>
-            <span>Upgrade your account</span>
-        </a>
-    </li>
+     
       <li class="nav-item">
         <a class="nav-link collapsed" href="privacy">
           <i class="bi bi-card-list"></i>
@@ -205,12 +225,16 @@
   <main id="main" class="main">
     <div id="messagesContainer">
       <h2>Messages</h2>
-      <ul id="messageList"></ul>
+      <ul id="messageList">
+        <li onclick="showInbox()">Message 1</li>
+        <li onclick="showInbox()">Message 2</li>
+        <!-- Add more messages as needed -->
+      </ul>
     </div>
 
-    <div id="messageContent">
+    <div id="inboxContainer">
+      <button id="closeButton" onclick="closeInbox()">Close</button>
       <h2 style="color: cadetblue; font-weight: 600;">Inbox</h2>
-
       <div id="selectedMessage"></div>
       <h3>Your chat history</h3>
       <div id="chatHistory"></div>
@@ -247,6 +271,16 @@
   <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
   <!-- Template Main JS File -->
+  <script>
+    function showInbox() {
+      document.getElementById('inboxContainer').style.display = 'block';
+      // You may want to load the selected message details here
+    }
+
+    function closeInbox() {
+      document.getElementById('inboxContainer').style.display = 'none';
+    }
+  </script>
   <script>
     let selectedUserId = null;
 
