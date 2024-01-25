@@ -18,7 +18,7 @@ updateBusinessProfile();
 
           img.onload = function () {
             // Check if the image dimensions are within the specified limits
-            if (img.width <= 360 && img.height <= 360) {
+            if (img.width <= 500 && img.height <= 500) {
               // Display the selected image preview
               document.getElementById("previewImage").src = reader.result;
 
@@ -29,7 +29,7 @@ updateBusinessProfile();
               document.getElementById("base64ImageInput").value =
                 base64ImageData;
             } else {
-              alert("Image dimensions must be 300px x 300px or less.");
+              alert("Image dimensions must be 500px x 500px or less.");
               // You may want to clear the file input or take other actions on invalid images
             }
           };
@@ -100,7 +100,7 @@ updateBusinessProfile();
 
       // Fetch API endpoint to update user data in the backend
       try {
-        const response = await fetch("https://moneyhive-mw.com:4000/api/business/create", {
+        const response = await fetch("https://malh.fun:4000/api/business/create", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -176,7 +176,7 @@ async function UpdateBusiness() {
     };
 
     // Your existing fetch code
-    const response = await fetch("https://moneyhive-mw.com:4000/api/business/update", {
+    const response = await fetch("https://malh.fun:4000/api/business/update", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -215,7 +215,7 @@ async function DeleteBusiness(){
     };
     try {
       const response = await fetch(
-        "https://moneyhive-mw.com:4000/api/business/delete",
+        "https://malh.fun:4000/api/business/delete",
         {
           method: "POST",
           headers: {
@@ -253,7 +253,7 @@ async function updateBusinessProfile() {
     const user = JSON.parse(userData);
     const userId = user.id;
 
-    const response = await fetch(`https://moneyhive-mw.com:4000/api/users/${userId}`);
+    const response = await fetch(`https://malh.fun:4000/api/users/${userId}`);
     const updatedData = await response.json();
 
     // Directly update session storage with the new data

@@ -33,7 +33,15 @@
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-EG7TJ1ETTW');
+</script>
 
 </head>
 
@@ -258,7 +266,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="about">
                     <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Founders</span>
+                    <span>About</span>
                 </a>
             </li>
 
@@ -532,7 +540,7 @@
             &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            <p>@2023</p>
+            <p>@2024</p>
         </div>
     </footer>
     <!-- End Footer -->
@@ -560,7 +568,7 @@
         // Function to get the count of unread messages
         async function getUnreadMessageCount(userId) {
             try {
-                const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
+                const response = await fetch(`https://malh.fun:3000/get_unread_message_count/${userId}`);
                 const data = await response.json();
                 return data.unread_count;
             } catch (error) {

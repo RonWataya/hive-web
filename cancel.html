@@ -28,15 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EG7TJ1ETTW');
-</script>
 
   <!-- =======================================================
   * Template Name: NiceAdmin - v2.3.1
@@ -57,9 +48,9 @@
             <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
               <div class="d-flex justify-content-center py-4">
-                <a href="index" class="logo d-flex align-items-center w-auto">
+                <a href="" class="logo d-flex align-items-center w-auto">
                  
-                  <span class="d-none d-lg-block">$1.99 (MWK 3,300.00)</span>
+                  <span class="d-none d-lg-block">Payment Cancelled</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -68,41 +59,21 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Upgrade to <span style="color: gold; font-size: 50px;">Premium</span></h5>
-                    <br><p class="text-center small" style="font-weight: 600;">Select a payment method below</p>
+                    <h5 class="card-title text-center pb-0 fs-4"> <span style="color: gold; font-size: 50px;"></span></h5>
+                    
                 
                   </div>
 
                   <form class="row g-3 needs-validation" novalidate>
 
-                    <div class="col-lg-12 no-pdd">
-                      <div class="checky-sec">
-                          <div class="fgt-sec">
-                            
-                              <img id="cardImage" src="assets/img/card.png" alt="Card" height="40" width="100">
-                              <input type="radio" name="payment_method" id="card" value="card" style="margin-left: 20px;">
-                              <label for="card">
-                                  <span></span>
-                              </label>
-                             
-                             
-                          </div>
-                          <br>
-                          <div class="fgt-sec">
-                            <img id="ppImage" src="assets/img/pp.png" alt="PayPal" height="40" width="100">
-                            <input type="radio" name="payment_method" id="paypal" value="paypal" style="margin-left: 20px;">
-                              <label for="paypal">
-                                  <span></span>
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-                    <br><p class="text-center small" style="font-weight: 600;">To pay using other payment methods contact <a href="support.html">Support</a> for assistance</p>
+                   
+                   
                    
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Checkout</button>
-                    </div>
-                    <p class="text-center small" style="font-weight: 600;">You will be charged a total amount of $1.99</p>
+                      <button class="btn btn-primary w-100" type="button" id="loginButton">Login to continue</button>
+                  </div>
+                  
+                    
                     
                   </form>
 
@@ -140,9 +111,22 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+
+        event.preventDefault();
+
+        // Clear session storage
+        sessionStorage.clear();
+        document.getElementById('loginButton').addEventListener('click', function() {
+    // Redirect to index.html
+    window.location.href = 'index.html';
+});
 
 
-  <script src="assets/js/payment.js"></script>
+  });
+</script>
 
 </body>
 

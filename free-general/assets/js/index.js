@@ -3,7 +3,7 @@
 
 //Fetch company list for home page
 function fetchCompanies(companyList, city, country, category) {
-    fetch('https://moneyhive-mw.com:2000/api/portifolio')
+    fetch('https://malh.fun:2000/api/portifolio')
         .then(response => response.json())
         .then(data => {
             const companyListElement = document.getElementById(companyList);
@@ -198,7 +198,7 @@ function setupReviewButtonListener() {
 /****************************************************************************************************/
 
 function fetchReviews(companyId) {
-    fetch('https://moneyhive-mw.com:2000/api/reviews')
+    fetch('https://malh.fun:2000/api/reviews')
         .then(response => response.json())
         .then(data => {
             console.log('API Response:', data); // Log the API response for debugging
@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('https://moneyhive-mw.com:3000/api/users/reviews', {
+                const response = await fetch('https://malh.fun:3000/api/users/reviews', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -354,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('https://moneyhive-mw.com:3000/contact/inquiry', {
+                const response = await fetch('https://malh.fun:3000/contact/inquiry', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

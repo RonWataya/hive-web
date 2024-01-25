@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
   const loginMessage = document.getElementById("loginMessage");
-  const userDataUrl = "https://moneyhive-mw.com:3000/api/users";
+  const userDataUrl = "https://malh.fun:3000/api/users";
 
   loginForm.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -19,14 +19,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
       // Fetch user data
-      const response = await fetch(userDataUrl);
-      const users = await response.json();
+      const response = await fetch(userDataUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          loginValue: loginValue,
+          password: password,
+        }),
+      });
 
-      const user = users.find(
-        (u) =>
-          (u.phone === parseInt(loginValue, 10) || u.email === loginValue) &&
-          u.password === password
-      );
+      const user = await response.json();
 
       if (user) {
         // Successful login
@@ -41,31 +45,32 @@ document.addEventListener("DOMContentLoaded", function () {
         const redirectDelay = 1000; // Adjust the delay time if needed
 
         if (user.category === "General") {
-            const redirectUrl = (user.status === "freemium") ? "/free-general/index.html" : "/general/index.html";
-        
-            setTimeout(() => {
-                window.location.href = redirectUrl;
-            }, redirectDelay);
+          const redirectUrl = (user.status === "freemium") ? "/free-general/index.html" : "/general/index.html";
+
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, redirectDelay);
         } else if (user.category === "Micro Lender") {
           const redirectUrl = (user.status === "freemium") ? "/free-business/index.html" : "/business/index.html";
-            setTimeout(() => {
-              window.location.href = redirectUrl;
-            }, redirectDelay);
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, redirectDelay);
         } else if (user.category === "Microfinancier") {
           const redirectUrl = (user.status === "freemium") ? "/free-business/index.html" : "/business/index.html";
           setTimeout(() => {
             window.location.href = redirectUrl;
           }, redirectDelay);
-      } else if (user.category === "Investor") {
-        const redirectUrl = (user.status === "freemium") ? "/free-investor/index.html" : "/investor/index.html";
-        setTimeout(() => {
-          window.location.href = redirectUrl;
-        }, redirectDelay);
-    } else {
-      alert('Data not found');
-            // Handle other categories if needed
+        } else if (user.category === "Investor") {
+          const redirectUrl = (user.status === "freemium") ? "/free-investor/index.html" : "/investor/index.html";
+          setTimeout(() => {
+            window.location.href = redirectUrl;
+          }, redirectDelay);
+        } else {
+          loginMessage.textContent =
+          "Unregistered user, Please sign up to continue!";
+          // Handle other categories if needed
         }
-        
+
       } else {
         // Failed login
         loginMessage.textContent =

@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sessionStorage.setItem('passwordData', JSON.stringify(verificationData));
             // Send the verification data to the backend using fetch or another method
             // Replace 'your-backend-url' with your actual backend URL
-            fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:3000/verification', {
+            fetch('https://malh.fun:3000/verification', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
 
             try {
-                const response = await fetch('http://ec2-54-201-138-205.us-west-2.compute.amazonaws.com:2000/api/users/passwordReset', {
+                const response = await fetch('https://malh.fun:2000/api/users/passwordReset', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

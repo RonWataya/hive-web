@@ -1,4 +1,5 @@
 const africanCountries = [
+    'Country',
     'Afghanistan',
     'Albania',
     'Algeria',

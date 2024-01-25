@@ -1057,8 +1057,8 @@ h6 {
     }
     .col-xxl-4,
     .col-md-6 {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 85%;
+        margin-bottom: 6px;
     }
 }
 
@@ -1573,7 +1573,6 @@ h6 {
 /*---------------------------------------------
 Pop Modal
 ----------------------*/
-
 .moda {
     display: none;
     position: flex;
@@ -1605,6 +1604,7 @@ Pop Modal
     text-decoration: none;
     cursor: pointer;
 }
+
 /* Add this CSS to your styles */
 
 

@@ -334,7 +334,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="about">
                     <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Founders</span>
+                    <span>About</span>
                 </a>
             </li>
 
@@ -418,7 +418,7 @@
                                         <div class="card-body">
                                             <p>Hear what other people are saying about us</p>
 
-                                            <button type="button" class="btn btn-primary review-button" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable">
+                                            <button type="button" class="btn btn-primary review-button" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
                                                 <i class="bi bi-info-circle"></i> Reviews
                                               </button>
                                         </div>
@@ -475,14 +475,14 @@
 
 
                                             <div class="text-center">
-                                                <button type="button" class="btn btn-primary" id="buttonInquiry">Submit</button>
+                                                <button type="button" class="btn btn-primary" id="buttonInquiry" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Submit</button>
                                                 <button type="reset" class="btn btn-secondary">Reset</button>
                                             </div>
 
                                             <div class="text-center">
                                                 <h5 class="card-title">Or chat with us</h5>
 
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChat"><i class="bi bi-chat"></i> Start a chat!</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChat" style="background-color: #FFAA33; border-color: #FFAA33; color: white;"><i class="bi bi-chat"></i> Start a chat!</button>
                                                 <button type="button" class="btn btn-success"><i class="bi bi-whatsapp"></i> Whatsapp!</button>
 
                                             </div>
@@ -511,7 +511,7 @@
                                                     <!-- End List group Advanced Content -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDialog" id="buttonReview">Add your review</button>
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDialog" id="buttonReview" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Add your review</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -556,7 +556,7 @@
                                                     <!-- End floating Labels Form -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary" id="submitReview">Submit</button>
+                                                    <button type="submit" class="btn btn-primary" id="submitReview" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Submit</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -600,7 +600,7 @@
                                                     <!-- End floating Labels Form -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary" id="sendButton" onclick="sendChat()">Send</button>
+                                                    <button type="submit" class="btn btn-primary" id="sendButton" onclick="sendChat()" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Send</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -639,7 +639,7 @@
             &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-            <p>@2023</p>
+            <p>@2024</p>
         </div>
     </footer>
     <!-- End Footer -->
@@ -699,12 +699,13 @@
             const receiver = JSON.parse(companyData);
             const id = user.id;
             const receiverId = receiver.user;
+            const targetmail = receiver.email;
             const userName = user.firstName+" "+user.lastName;
           const senderId = 1; // Replace with the actual sender's ID
           const messageContent = document.getElementById('chatContent').value;
           const resp = document.getElementById('resp');
         
-          fetch('https://moneyhive-mw.com:3000/send_message', {
+          fetch('https://malh.fun:3000/send_message', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -714,7 +715,9 @@
               receiver_id: receiverId,
               sender_name:userName,
               content: messageContent,
+              targetmail: targetmail,
             }),
+
           })
             .then(response => response.json())
             .then(result => {
@@ -737,7 +740,7 @@
     // Function to get the count of unread messages
     async function getUnreadMessageCount(userId) {
         try {
-            const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
+            const response = await fetch(`https://malh.fun:3000/get_unread_message_count/${userId}`);
             const data = await response.json();
             return data.unread_count;
         } catch (error) {

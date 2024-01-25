@@ -1057,8 +1057,8 @@ h6 {
     }
     .col-xxl-4,
     .col-md-6 {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 85%;
+        margin-bottom: 6px;
     }
 }
 
@@ -1573,6 +1573,38 @@ h6 {
 /*---------------------------------------------
 Pop Modal
 ----------------------*/
+.moda {
+    display: none;
+    position: flex;
+    width: 200px;
+    height: 200px;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.moda-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Add this CSS to your styles */
 
 

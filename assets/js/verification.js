@@ -32,6 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Generate a new random 6-digit verification code for email
                     verificationMethod = 'email';
                     verificationError.textContent = '';
+                    const initialVerificationCode = generateVerificationCode();
+                    verificationCode = initialVerificationCode;
 
                 }
             });
@@ -41,8 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         sendVerificationButton.addEventListener('click', function() {
             // Check if a verification code has been generated
             // Generate a random 6-digit verification code for email/sms initially
-            const initialVerificationCode = generateVerificationCode();
-            verificationCode = initialVerificationCode;
+           
 
             if (verificationCode) {
                 // Check if a verification method is selected
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     // Send the verification data to the backend using fetch or another method
                     // Replace 'your-backend-url' with your actual backend URL
-                    fetch('https://moneyhive-mw.com:3000/verification', {
+                    fetch('https://malh.fun:3000/verification', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',
@@ -113,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     formData.verificationCode = codeValue;
 
                     // Send the formData to the backend
-                    fetch('https://moneyhive-mw.com:3000/api/register', {
+                    fetch('https://malh.fun:3000/api/register', {
                             method: 'POST',
                             headers: {
                                 'Content-Type': 'application/json',

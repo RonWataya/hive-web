@@ -32,6 +32,15 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EG7TJ1ETTW');
+</script>
 
   <!-- =======================================================
   *
@@ -242,7 +251,7 @@
 
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="support">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
@@ -309,11 +318,10 @@
       </li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="about">
-          <i class="bi bi-box-arrow-in-right"></i>
-          <span>Founders</span>
+            <i class="bi bi-box-arrow-in-right"></i>
+            <span>About</span>
         </a>
-      </li>
-
+    </li>
 
 
 
@@ -329,7 +337,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index">Home</a></li>
-          <li class="breadcrumb-item active"><a href="user-profile">Refresh<i class="fa fa-refresh"></i></a></li>
+          <li class="breadcrumb-item active"><a href="users-profile">Refresh<i class="fa fa-refresh"></i></a></li>
         </ol>
       </nav>
     </div>
@@ -441,8 +449,8 @@
                               class="bi bi-upload"></i></a>
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"
                             onclick="removeProfileImage(); return false;"><i class="bi bi-trash"></i></a>
-                          <span>The image should be a maximum of 250px of height
-                            and 250px of width</span>
+                          <span>The image should be a maximum of 500px of height
+                            and 500px of width</span>
                         </div>
                       </div>
                     </div>
@@ -518,7 +526,7 @@
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">
+                      <button type="submit" class="btn btn-primary" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
                         Save Changes
                       </button>
                     </div>
@@ -554,7 +562,7 @@
                     </div>
 
                     <div class="text-center">
-                      <button type="submit" class="btn btn-primary">
+                      <button type="submit" class="btn btn-primary" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
                         Save Changes
                       </button>
                     </div>
@@ -587,7 +595,7 @@
                     </div>
 
                     <div class="text-center">
-                      <button type="button" class="btn btn-primary" id="passwordSubmit">
+                      <button type="button" class="btn btn-primary" id="passwordSubmit" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
                         Change Password
                       </button>
                     </div>
@@ -612,8 +620,8 @@
                     </div>
 
                     <div class="text-center">
-                      <button type="button" class="btn btn-primary" id="deleteRequest">
-                        Submit request
+                      <button type="button" class="btn btn-primary" id="deleteRequest" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
+                        Submit Request
                       </button>
                     </div>
                   </form>
@@ -652,7 +660,7 @@
       &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
-      <p>@2023</p>
+      <p>@2024</p>
     </div>
   </footer>
   <!-- End Footer -->
@@ -706,7 +714,7 @@
     // Function to get the count of unread messages
     async function getUnreadMessageCount(userId) {
         try {
-            const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
+            const response = await fetch(`https://malh.fun:3000/get_unread_message_count/${userId}`);
             const data = await response.json();
             return data.unread_count;
         } catch (error) {

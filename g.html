@@ -19,23 +19,14 @@
     <link rel="stylesheet" type="text/css" href="sign-in/lib/slick/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="sign-in/css/style.css">
     <link rel="stylesheet" type="text/css" href="sign-in/css/responsive.css">
-    
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-EG7TJ1ETTW');
-</script>
 
     <style>
         button[disabled] {
             opacity: 0.6;
             cursor: not-allowed;
         }
-        
+
         .custom-google-button {
             background-color: #4285f4;
             color: #ffffff;
@@ -46,7 +37,7 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
-        
+
         .custom-google-button:hover {
             background-color: #3367d6;
         }
@@ -63,76 +54,14 @@
             <div class="signin-popup">
                 <div class="signin-pop">
                     <div class="row">
-                        <div class="col-lg-6">
-                            <div class="cmp-info">
-                                <div class="cm-logo">
-                                    <img src="sign-in/images/extended-small.png" alt="">
-                                    <p>MoneyHive, is a global financial access platform and network where businesses and individuals looking for loans and capital connect with lenders, creditors and investors</p>
-                                </div>
-                                <!--cm-logo end-->
 
-                            </div>
-                            <!--cmp-info end-->
-                        </div>
                         <div class="col-lg-6">
                             <div class="login-sec">
                                 <ul class="sign-control">
-                                    <li data-tab="tab-1" class="current"><a href="#" title="">Sign in</a></li>
-                                    <li data-tab="tab-2"><a href="#" title="">Sign up</a></li>
+
+                                    <li data-tab="tab-2"><a href="#" title="">Click here</a></li>
                                 </ul>
-                                <div class="sign_in_sec current" id="tab-1">
 
-                                    <h3>Sign in</h3>
-                                    <form id="loginForm">
-                                        <div class="row">
-                                            <div class="col-lg-12 no-pdd">
-                                                <div class="sn-field">
-                                                    <input type="text" id="loginValue" name="loginValue" placeholder="Enter phone or email" required style="color:rgb(83, 78, 78)">
-                                                    <i class="la la-user"></i>
-                                                </div>
-                                                <!--sn-field end-->
-                                            </div>
-                                            <div class="col-lg-12 no-pdd">
-                                                <div class="sn-field">
-                                                    <input type="password" name="password" placeholder="Password" required style="color:rgb(83, 78, 78)">
-                                                    <i class="la la-lock"></i>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 no-pdd">
-                                                <div class="checky-sec">
-                                                    <div class="fgt-sec">
-                                                        <input type="checkbox" name="cc" id="c1">
-                                                        <label for="c1">
-															<span></span>
-														</label>
-                                                        <small>Remember me</small>
-                                                    </div>
-                                                    <!--fgt-sec end-->
-                                                    <a href="pass_reset.html" title="">Forgot Password?</a>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-12 no-pdd">
-                                                <button type="submit"> <a style="text-decoration:none;color:white;">Sign in</a></button>
-                                            </div>
-                                            <br/>
-                                            <div id="loginMessage" style="color: rgb(21, 54, 124);"> </div>
-
-                                        </div>
-
-                                    </form>
-
-                                    <div class="login-resources">
-                                        <h4>Login Via Social Account</h4>
-                                        <ul>
-                                            <li><a href="https://malh.fun:3000/auth/google" title="" class="fb"><i class="fa fa-google"></i>Google</a></li>
-                                        </ul>
-                                    </div>
-                                    <!--login-resources end-->
-
-
-
-                                    <!--login-resources end-->
-                                </div>
                                 <!--sign_in_sec end-->
                                 <div class="sign_in_sec" id="tab-2">
 
@@ -142,19 +71,19 @@
                                             <div class="row">
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="text" name="firstname" placeholder="First Name" required="required" style="color:rgb(83, 78, 78)">
+                                                        <input type="text" name="fullname" placeholder="Full Name"
+                                                            required="required" style="color:rgb(83, 78, 78)">
                                                         <i class="la la-user"></i>
                                                     </div>
                                                 </div>
+
+                                                <input type="text" name="lastname" placeholder="Last Name" style="display: none;">
+
+
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="text" name="lastname" placeholder="Last Name" required="required" style="color:rgb(83, 78, 78)">
-                                                        <i class="la la-user"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-12 no-pdd">
-                                                    <div class="sn-field">
-                                                        <select id="countrySelect" name="country" style="color:rgb(83, 78, 78)">
+                                                        <select id="countrySelect" name="country"
+                                                            style="color:rgb(83, 78, 78)">
                                                             <!-- Options will be populated dynamically using JavaScript -->
                                                         </select>
                                                         <i class="la la-globe"></i>
@@ -162,39 +91,45 @@
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="number" name="phone" placeholder="Phone" required="required" style="color:rgb(83, 78, 78)">
+                                                        <input type="number" name="phone" placeholder="Phone"
+                                                            required="required" style="color:rgb(83, 78, 78)">
                                                         <i class="la la-phone"></i>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="email" name="email" placeholder="Email" style="color:rgb(83, 78, 78)">
+                                                        <input type="email" name="email" placeholder="Email"
+                                                            style="color:rgb(83, 78, 78)">
                                                         <i class="la la-envelope"></i>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
                                                         <select id="categorySelect" style="color:rgb(83, 78, 78)">
-															<option>General</option>
-								
-															<option> Micro Lender</option>
-															<option> Microfinancier</option>
-															<option>Investor</option>
-														</select>
+                                                            <option>General</option>
+
+                                                            <option> Micro Lender</option>
+                                                            <option> Microfinancier</option>
+                                                            <option>Investor</option>
+                                                        </select>
                                                         <i class="la la-dropbox"></i>
                                                         <span><i class="fa fa-ellipsis-h"></i></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="password" id="password" name="password" placeholder="Password" required="required" style="color:rgb(83, 78, 78)">
+                                                        <input type="password" id="password" name="password"
+                                                            placeholder="Password" required="required"
+                                                            style="color:rgb(83, 78, 78)">
                                                         <i class="la la-lock"></i>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="password" id="repeat-password" name="repeat-password" placeholder="Repeat Password" required="required" style="color:rgb(83, 78, 78)">
+                                                        <input type="password" id="repeat-password"
+                                                            name="repeat-password" placeholder="Repeat Password"
+                                                            required="required" style="color:rgb(83, 78, 78)">
                                                         <i class="la la-lock"></i>
                                                     </div>
 
@@ -203,7 +138,8 @@
 
                                                 <div class="col-lg-12 no-pdd">
 
-                                                    <a href="#" class="info-icon" id="infoIcon" data-bs-toggle="modal" data-bs-target="#infoModal">
+                                                    <a href="#" class="info-icon" id="infoIcon" data-bs-toggle="modal"
+                                                        data-bs-target="#infoModal">
                                                         <i class="fas fa-info-circle"></i> Learn more about categories
                                                     </a>
                                                     <!-- Custom popup -->
@@ -212,26 +148,33 @@
                                                             <span class="close-btn" id="closeBtn">&times;</span>
                                                             <h2>MoneyHive Account Categories</h2>
                                                             <strong>Micro Lender:</strong>
-                                                            <p> Lenders who provide smaller loan amounts to individuals for personal or business use.</p><br>
+                                                            <p> Lenders who provide smaller loan amounts to individuals
+                                                                for personal or business use.</p><br>
                                                             <strong>Microfinancier:</strong>
-                                                            <p> Institutions or individuals who lend money in larger volumes, either as capital to businesses or individuals.</p><br>
+                                                            <p> Institutions or individuals who lend money in larger
+                                                                volumes, either as capital to businesses or individuals.
+                                                            </p><br>
                                                             <strong>Investor:</strong>
-                                                            <p> Individuals or organizations looking to invest their funds in various financial opportunities, including startups, ideas, and established businesses.</p>
+                                                            <p> Individuals or organizations looking to invest their
+                                                                funds in various financial opportunities, including
+                                                                startups, ideas, and established businesses.</p>
                                                         </div>
                                                     </div>
                                                     <div class="checky-sec st2">
                                                         <div class="fgt-sec">
                                                             <input type="checkbox" name="tt" id="c2">
                                                             <label for="c2">
-																<span></span>
-															</label>
-                                                            <small>Yes, I understand and agree to the MoneyHive Terms & Conditions.</small>
+                                                                <span></span>
+                                                            </label>
+                                                            <small>Yes, I understand and agree to the MoneyHive Terms &
+                                                                Conditions.</small>
                                                         </div>
                                                         <!--fgt-sec end-->
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
-                                                    <button type="submit" value="signup" onclick="validateForm()">Get Started</button>
+                                                    <button type="submit" value="signup" onclick="validateForm()">Get
+                                                        Started</button>
                                                 </div>
                                             </div>
                                             <br>
@@ -282,10 +225,23 @@
     <script type="text/javascript" src="sign-in/lib/slick/slick.min.js"></script>
     <script type="text/javascript" src="sign-in/js/script.js"></script>
     <script type="text/javascript" src="sign-in/css/js/script.js"></script>
-    <script src="assets/js/index.js"></script>
+    <script src="assets/js/g.js"></script>
     <script src="assets/js/countries.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Extract parameters from the URL
+    const params = new URLSearchParams(window.location.search);
+    
+    // Fill in the email and display name fields
+    const userEmail = params.get('email');
+    const userDisplay = params.get('displayName');
 
+    // Set values in the form
+    document.querySelector('input[name="email"]').value = userEmail;
+    document.querySelector('input[name="fullname"]').value = userDisplay;
+  });
+</script>
 
 
 

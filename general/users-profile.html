@@ -46,6 +46,15 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EG7TJ1ETTW');
+</script>
 
     <!-- =======================================================
   *
@@ -319,11 +328,11 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="about">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>Founders</span>
-            </a>
-        </li>
+          <a class="nav-link collapsed" href="about">
+              <i class="bi bi-box-arrow-in-right"></i>
+              <span>About</span>
+          </a>
+      </li>
 
 
 
@@ -340,7 +349,7 @@
         <nav>
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="index">Home</a></li>
-            <li class="breadcrumb-item active"><a href="user-profile">Refresh<i class="fa fa-refresh"></i></a></li>
+            <li class="breadcrumb-item active"><a href="users-profile">Refresh<i class="fa fa-refresh"></i></a></li>
           </ol>
         </nav>
       </div>
@@ -514,8 +523,8 @@
                               ><i class="bi bi-trash"></i
                             ></a>
                             <span
-                              >The image should be a maximum of 250px of height
-                              and 250px of width</span
+                              >The image should be a maximum of 500px of height
+                              and 500px of width</span
                             >
                           </div>
                         </div>
@@ -880,7 +889,7 @@
         >. All Rights Reserved
       </div>
       <div class="credits">
-        <p>@2023</p>
+        <p>@2024</p>
       </div>
     </footer>
     <!-- End Footer -->
@@ -932,7 +941,7 @@
     // Function to get the count of unread messages
     async function getUnreadMessageCount(userId) {
         try {
-            const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
+            const response = await fetch(`https://malh.fun:3000/get_unread_message_count/${userId}`);
             const data = await response.json();
             return data.unread_count;
         } catch (error) {

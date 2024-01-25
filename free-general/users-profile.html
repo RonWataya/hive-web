@@ -1,982 +1,744 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Profile | MoneyHive</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <!-- Favicons -->
-    <link href="assets/img/hive-logo-small.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+  <title>Profile | MoneyHive</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
+  <!-- Favicons -->
+  <link href="assets/img/hive-logo-small.png" rel="icon" />
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
-    <!-- Vendor CSS Files -->
-    <link
-      href="assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
-    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
-    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
-    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="sign-in/css/line-awesome-font-awesome.min.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="sign-in/css/font-awesome.min.css"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
 
-    <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="sign-in/css/line-awesome-font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="sign-in/css/font-awesome.min.css" />
 
-    <!-- =======================================================
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EG7TJ1ETTW');
+</script>
+  <!-- =======================================================
   *
   ======================================================== -->
   <style>
-       
-
     .pop {
- width: 300px;
- border-radius: 6px;
- background: #fff;
- position: fixed;
- bottom: 0;
- left: 50%;
- transform: translateX(-50%) translateY(100%);
- text-align: center;
- padding: 0 30px 30px;
- color: #333;
- visibility: hidden;
- transition: transform 0.4s, visibility 0.4s;
- box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
-}
+      width: 300px;
+      border-radius: 6px;
+      background: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      text-align: center;
+      padding: 0 30px 30px;
+      color: #333;
+      visibility: hidden;
+      transition: transform 0.4s, visibility 0.4s;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-.open-pop {
- visibility: visible;
- transform: translateX(-50%) translateY(-50%);
-}
+    .open-pop {
+      visibility: visible;
+      transform: translateX(-50%) translateY(-50%);
+    }
 
-     .pop img {
-         width: 70px;
-         margin-top: -50px;
-         border-radius: 50%;
-         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-     }
+    .pop img {
+      width: 70px;
+      margin-top: -50px;
+      border-radius: 50%;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
 
-     .pop h2 {
-         font-size: 30px;
-         font-weight: 500;
-         margin: 30px 0 10px;
-     }
+    .pop h2 {
+      font-size: 30px;
+      font-weight: 500;
+      margin: 30px 0 10px;
+    }
 
-     .pop button {
-         width: 100%;
-         margin-top: 40px;
-         padding: 10px 0;
-         background: #6fd649;
-         color: #fff;
-         border: 0;
-         outline: none;
-         font-size: 18px;
-         border-radius: 4px;
-         cursor: pointer;
-         box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-     }
+    .pop button {
+      width: 100%;
+      margin-top: 40px;
+      padding: 10px 0;
+      background: #6fd649;
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    }
 
-     .pop.error button {
-         background: red;
-         /* Red color for error button */
-     }
+    .pop.error button {
+      background: red;
+      /* Red color for error button */
+    }
 
-     .pop.error h2 {
-         color: red;
-         /* Red color for error message */
-     }
- </style>
-  </head>
+    .pop.error h2 {
+      color: red;
+      /* Red color for error message */
+    }
+  </style>
+</head>
 
-  <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      <div class="d-flex align-items-center justify-content-between">
-        <i class="bi bi-list toggle-sidebar-btn"></i>
-        <a href="index" class="logo d-flex align-items-center">
-          <img src="assets/img/hive-cropped.png" alt="" />
-        </a>
-      </div>
-      <!-- End Logo -->
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+      <a href="index" class="logo d-flex align-items-center">
+        <img src="assets/img/hive-cropped.png" alt="" />
+      </a>
+    </div>
+    <!-- End Logo -->
 
-      <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center">
-          <!-- End Search Icon-->
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <!-- End Search Icon-->
 
-          <li class="nav-item dropdown">
-            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-              <i class="bi bi-bell"></i>
-              <span class="badge bg-primary badge-number">0</span>
-            </a>
-            <!-- End Notification Icon -->
-
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-              <li class="dropdown-header">
-                  You may have new notifications
-                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-              </li>
-              <li>
-                  <hr class="dropdown-divider">
-              </li>
-
-              <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                      <h4>Welcome to moneyhive, learn more about our services as a platform</h4>
-                      <p>More details</p>
-                      <p>Recent</p>
-                  </div>
-              </li>
-
-              <li>
-                  <hr class="dropdown-divider">
-              </li>
-
-              <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                      <h4>Update your profile by clicking the menu on the right pane</h4>
-                      <p>More details</p>
-                      <p>Recent</p>
-                  </div>
-              </li>
-
-              <li>
-                  <hr class="dropdown-divider">
-              </li>
-
-              <li class="notification-item">
-                  <i class="bi bi-info-circle text-primary"></i>
-                  <div>
-                      <h4>Upgrade your account to premium to access unlimited services and data</h4>
-                      <p>Review your security settings</p>
-                      <p>Recent</p>
-                  </div>
-              </li>
-
-              <li>
-                  <hr class="dropdown-divider">
-              </li>
-              <li class="dropdown-footer">
-                  <a href="#">Show all notifications</a>
-              </li>
-
-          </ul>
-            <!-- End Notification Dropdown Items -->
-          </li>
-          <!-- End Notification Nav -->
-
-          <li class="nav-item dropdown">
-            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-              <i class="bi bi-chat-left-text"></i>
-              <span id="unreadMessageCount" class="badge bg-success badge-number">!</span>
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">0</span>
           </a>
-            <!-- End Messages Icon -->
+          <!-- End Notification Icon -->
 
-            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-              <li class="dropdown-header">
-                  You may have new messages
-                  <a href="chat"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-              </li>
-              <li>
-                  <hr class="dropdown-divider">
-              </li>                      
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You may have new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Welcome to moneyhive, learn more about our services as a platform</h4>
+                <p>More details</p>
+                <p>Recent</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Update your profile by clicking the menu on the right pane</h4>
+                <p>More details</p>
+                <p>Recent</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Upgrade your account to premium to access unlimited services and data</h4>
+                <p>Review your security settings</p>
+                <p>Recent</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
           </ul>
-            <!-- End Messages Dropdown Items -->
-          </li>
-          <!-- End Messages Nav -->
+          <!-- End Notification Dropdown Items -->
+        </li>
+        <!-- End Notification Nav -->
 
-          <li class="nav-item dropdown pe-3">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="#"
-              data-bs-toggle="dropdown"
-            >
-              <img id="profileImage" alt="Profile" class="rounded-circle" />
-              <span
-                class="d-none d-md-block dropdown-toggle ps-2"
-                id="userName"
-              ></span>
-            </a>
-            <!-- End Profile Iamge Icon -->
+        <li class="nav-item dropdown">
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span id="unreadMessageCount" class="badge bg-success badge-number">!</span>
+          </a>
+          <!-- End Messages Icon -->
 
-            <ul
-              class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile"
-            >
-              <li class="dropdown-header">
-                <h6 id="fullName"></h6>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="users-profile">
-                    <i class="bi bi-person"></i>
-                    <span>My Profile</span>
-                </a>
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You may have new messages
+              <a href="chat"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
             </li>
             <li>
-                <hr class="dropdown-divider">
+              <hr class="dropdown-divider">
+            </li>
+          </ul>
+          <!-- End Messages Dropdown Items -->
+        </li>
+        <!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img id="profileImage" alt="Profile" class="rounded-circle" />
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="userName"></span>
+          </a>
+          <!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="fullName"></h6>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
             </li>
 
             <li>
-                <a class="dropdown-item d-flex align-items-center" href="business-idea">
-                    <i class="bi bi-gear"></i>
-                    <span>Business Idea</span>
-                </a>
-            </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-
-              <li>
-                <a class="dropdown-item d-flex align-items-center" href="support">
-                  <i class="bi bi-question-circle"></i>
-                  <span>Need Help?</span>
-                </a>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-
-              <li>
-                <a
-                  class="dropdown-item d-flex align-items-center"
-                  href="../index"
-                >
-                  <i class="bi bi-box-arrow-right"></i>
-                  <span>Sign Out</span>
-                </a>
-              </li>
-            </ul>
-            <!-- End Profile Dropdown Items -->
-          </li>
-          <!-- End Profile Nav -->
-        </ul>
-      </nav>
-      <!-- End Icons Navigation -->
-    </header>
-    <!-- End Header -->
-
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-
-      <ul class="sidebar-nav" id="sidebar-nav">
-
-          <li class="nav-item">
-              <a class="nav-link " href="index">
-                  <i class="bi bi-grid"></i>
-                  <span>Home</span>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
               </a>
-          </li>
-          <!-- End Home Nav -->
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="business-idea">
+                <i class="bi bi-gear"></i>
+                <span>Business Idea</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
 
 
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="support">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
 
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="payment">
-                <i class="bi bi-card-list"></i>
-                <span>Upgrade your account</span>
-            </a>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="../index">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
         </li>
-          <!-- End Register Page Nav -->
-          <li class="nav-item">
-            <a class="nav-link collapsed" href="privacy">
-                <i class="bi bi-card-list"></i>
-                <span>Privacy Policy</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="faq">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>FAQ</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="support">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>Support</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="about">
-                <i class="bi bi-box-arrow-in-right"></i>
-                <span>Founders</span>
-            </a>
-        </li>
-
-
-
-
-
+        <!-- End Profile Nav -->
       </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+  </header>
+  <!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link " href="index">
+          <i class="bi bi-grid"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <!-- End Home Nav -->
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="payment">
+          <i class="bi bi-card-list"></i>
+          <span>Upgrade your account</span>
+        </a>
+      </li>
+      <!-- End Register Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="privacy">
+          <i class="bi bi-card-list"></i>
+          <span>Privacy Policy</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="faq">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>FAQ</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="support">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Support</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="about">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>About</span>
+        </a>
+      </li>
+
+
+
+
+
+    </ul>
 
   </aside>
-    <!-- End Sidebar-->
+  <!-- End Sidebar-->
 
-    <main id="main" class="main">
-      <div class="pagetitle">
-        <h1>Profile</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="index">Home</a></li>
-            <li class="breadcrumb-item active"><a href="user-profile"> Refresh<i class="fa fa-refresh"></i></a></li>
-          </ol>
-        </nav>
-      </div>
-      <!-- End Page Title -->
+  <main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Profile</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index">Home</a></li>
+          <li class="breadcrumb-item active"><a href="users-profile"> Refresh<i class="fa fa-refresh"></i></a></li>
+        </ol>
+      </nav>
+    </div>
+    <!-- End Page Title -->
 
-      <section class="section profile">
-        <div class="row">
-          <div class="col-xl-4">
-            <div class="card">
-              <div
-                class="card-body profile-card pt-4 d-flex flex-column align-items-center"
-              >
-                <img id="profileDP" alt="Profile" class="rounded-circle" />
-                <h2 id="profileName"></h2>
-                <h3 id="profileCountry"></h3>
-                <div class="social-links mt-2">
-                  <a id="twitterLink" href="#" class="twitter"
-                    ><i class="bi bi-twitter"></i
-                  ></a>
-                  <a id="facebookLink" href="#" class="facebook"
-                    ><i class="bi bi-facebook"></i
-                  ></a>
-                  <a id="instagramLink" href="#" class="instagram"
-                    ><i class="bi bi-instagram"></i
-                  ></a>
-                  <a id="linkedinLink" href="#" class="linkedin"
-                    ><i class="bi bi-linkedin"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-8">
-            <div class="card">
-              <div class="card-body pt-3">
-                <!-- Bordered Tabs -->
-                <ul class="nav nav-tabs nav-tabs-bordered">
-                  <li class="nav-item">
-                    <button
-                      class="nav-link active"
-                      data-bs-toggle="tab"
-                      data-bs-target="#profile-overview"
-                    >
-                      Overview
-                    </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <button
-                      class="nav-link"
-                      data-bs-toggle="tab"
-                      data-bs-target="#profile-edit"
-                    >
-                      Edit Profile
-                    </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <button
-                      class="nav-link"
-                      data-bs-toggle="tab"
-                      data-bs-target="#profile-settings"
-                    >
-                      Settings
-                    </button>
-                  </li>
-
-                  <li class="nav-item">
-                    <button
-                      class="nav-link"
-                      data-bs-toggle="tab"
-                      data-bs-target="#profile-change-password"
-                    >
-                      Change Password
-                    </button>
-                  </li>
-                  <li class="nav-item">
-                    <button
-                      class="nav-link"
-                      data-bs-toggle="tab"
-                      data-bs-target="#profile-delete-account"
-                    >
-                      Delete Account
-                    </button>
-                  </li>
-                </ul>
-                <div class="tab-content pt-2">
-                  <div
-                    class="tab-pane fade show active profile-overview"
-                    id="profile-overview"
-                  >
-                    <h5 class="card-title">About</h5>
-                    <p class="small fst-italic" id="profileAbout"></p>
-
-                    <h5 class="card-title">Profile Details</h5>
-
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Occupation</div>
-                      <div
-                        class="col-lg-9 col-md-8"
-                        id="profileOccupation"
-                      ></div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Address</div>
-                      <div class="col-lg-9 col-md-8" id="profileAddress"></div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Phone</div>
-                      <div class="col-lg-9 col-md-8" id="profilePhone"></div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Category</div>
-                      <div class="col-lg-9 col-md-8" id="profileCategory"></div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Status</div>
-                      <div class="col-lg-9 col-md-8" id="profileStatus"></div>
-                    </div>
-                    <div class="row">
-                      <div class="col-lg-3 col-md-4 label">Account ID</div>
-                      <div class="col-lg-9 col-md-8" id="accountID"></div>
-                    </div>
-                  </div>
-
-                  <div
-                    class="tab-pane fade profile-edit pt-3"
-                    id="profile-edit"
-                  >
-                    <!-- Profile Edit Form -->
-                    <form id="profileForm">
-                      <div class="row mb-3">
-                        <label
-                          for="profileImage"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Profile Image</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <img
-                            id="previewImage"
-                            src="assets/img/upload.png"
-                            alt="Profile"
-                            style="max-width: 300px; max-height: 300px"
-                          />
-                          <input type="hidden" id="base64ImageInput" />
-                          <div class="pt-2">
-                            <input
-                              type="file"
-                              accept="image/*"
-                              class="form-control"
-                              id="profileImageInput"
-                              style="display: none"
-                            />
-                            <a
-                              href="#"
-                              class="btn btn-primary btn-sm"
-                              title="Upload new profile image"
-                              onclick="document.getElementById('profileImageInput').click(); return false;"
-                              ><i class="bi bi-upload"></i
-                            ></a>
-                            <a
-                              href="#"
-                              class="btn btn-danger btn-sm"
-                              title="Remove my profile image"
-                              onclick="removeProfileImage(); return false;"
-                              ><i class="bi bi-trash"></i
-                            ></a>
-                            <span
-                              >The image should be a maximum of 250px of height
-                              and 250px of width</span
-                            >
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="firstName"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >First Name</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="firstName"
-                            type="text"
-                            class="form-control"
-                            id="firstName"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="lastName"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Last Name</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="lastName"
-                            type="text"
-                            class="form-control"
-                            id="lastName"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="about"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >About</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <textarea
-                            name="about"
-                            class="form-control"
-                            id="about"
-                            style="height: 100px"
-                          ></textarea>
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Job"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Occupation</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="job"
-                            type="text"
-                            class="form-control"
-                            id="job"
-                            value=""
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Address"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Address</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="address"
-                            type="text"
-                            class="form-control"
-                            id="address"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Phone"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Phone</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="otherPhone"
-                            type="number"
-                            class="form-control"
-                            id="otherPhone"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Twitter"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Twitter Profile</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="twitter"
-                            type="text"
-                            class="form-control"
-                            id="twitter"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Facebook"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Facebook Profile</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="facebook"
-                            type="text"
-                            class="form-control"
-                            id="facebook"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Instagram"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Instagram Profile</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="instagram"
-                            type="text"
-                            class="form-control"
-                            id="instagram"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="Linkedin"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Linkedin Profile</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="linkedin"
-                            type="text"
-                            class="form-control"
-                            id="linkedin"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary">
-                          Save Changes
-                        </button>
-                      </div>
-                    </form>
-                    <!-- End Profile Edit Form -->
-                  </div>
-
-                  <div class="tab-pane fade pt-3" id="profile-settings">
-                    <!-- Settings Form -->
-                    <form>
-                      <div class="row mb-3">
-                        <label
-                          for="fullName"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Email Notifications</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="changesMade"
-                              checked
-                            />
-                            <label class="form-check-label" for="changesMade">
-                              Changes made to your account
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="newProducts"
-                              checked
-                            />
-                            <label class="form-check-label" for="newProducts">
-                              Information on new products and services
-                            </label>
-                          </div>
-                          <div class="form-check">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              id="proOffers"
-                            />
-                            <label class="form-check-label" for="proOffers">
-                              Marketing and promo offers
-                            </label>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="text-center">
-                        <button type="submit" class="btn btn-primary">
-                          Save Changes
-                        </button>
-                      </div>
-                    </form>
-                    <!-- End settings Form -->
-                  </div>
-
-                  <div class="tab-pane fade pt-3" id="profile-change-password">
-                    <!-- Change Password Form -->
-                    <form>
-                      <div class="row mb-3">
-                        <label
-                          for="currentPassword"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Current Password</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="currentpassword"
-                            type="password"
-                            class="form-control"
-                            id="currentpassword"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="newPassword"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >New Password</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="password"
-                            type="password"
-                            class="form-control"
-                            id="password"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="row mb-3">
-                        <label
-                          for="renewPassword"
-                          class="col-md-4 col-lg-3 col-form-label"
-                          >Re-enter New Password</label
-                        >
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="confirm"
-                            type="password"
-                            class="form-control"
-                            id="confirm"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="text-center">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          id="passwordSubmit"
-                        >
-                          Change Password
-                        </button>
-                      </div>
-                    </form>
-                    <span id="passwordMatchError" class="error-message"></span>
-                    <!-- End Change Password Form -->
-                  </div>
-                  <div class="tab-pane fade pt-3" id="profile-delete-account">
-                    <!-- Change Password Form -->
-                    <form>
-                      <div class="row mb-3">
-                        <div class="col-md-8 col-lg-9">
-                          <p></p>
-                          <br />
-                          <br />
-                        </div>
-
-                        <div class="col-md-8 col-lg-9">
-                          <input
-                            name="delete"
-                            type="text"
-                            class="form-control"
-                            id="delete"
-                            required
-                            placeholder="Give us a reason why you want to delete your account"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="text-center">
-                        <button
-                          type="button"
-                          class="btn btn-primary"
-                          id="deleteRequest"
-                        >
-                          Submit request
-                        </button>
-                      </div>
-                    </form>
-                    <span id="deleteError" class="error-message"></span>
-                    <!-- End Change Password Form -->
-                  </div>
-                </div>
-                <br />
-                <br />
-                <div
-                  id="message"
-                  style="color: rgb(83, 21, 124); font-weight: bold"
-                ></div>
-
-               
-
-                <div class="pop" id="pop">
-                  <img src="assets/img/tick.png" alt="popup">
-                  <h2 id="modalMessage"></h2>
-                  <button type="button" onclick="closeModal()">OK</button>
-
-              </div>
-                <!-- End Bordered Tabs -->
+    <section class="section profile">
+      <div class="row">
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
+              <img id="profileDP" alt="Profile" class="rounded-circle" />
+              <h2 id="profileName"></h2>
+              <h3 id="profileCountry"></h3>
+              <div class="social-links mt-2">
+                <a id="twitterLink" href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                <a id="facebookLink" href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                <a id="instagramLink" href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a id="linkedinLink" href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
         </div>
-      </section>
-    </main>
 
-    <!-- End #main -->
-    <!-- End #main -->
-    <!--modal pop up for responses-->
-    <!-- Add this modal at the end of your HTML body -->
+        <div class="col-xl-8">
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">
+                    Overview
+                  </button>
+                </li>
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-      <div class="copyright">
-        &copy; <strong><span>MoneyHive</span></strong
-        >. All Rights Reserved
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">
+                    Edit Profile
+                  </button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-settings">
+                    Settings
+                  </button>
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">
+                    Change Password
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-delete-account">
+                    Delete Account
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content pt-2">
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                  <h5 class="card-title">About</h5>
+                  <p class="small fst-italic" id="profileAbout"></p>
+
+                  <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Occupation</div>
+                    <div class="col-lg-9 col-md-8" id="profileOccupation"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Address</div>
+                    <div class="col-lg-9 col-md-8" id="profileAddress"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Phone</div>
+                    <div class="col-lg-9 col-md-8" id="profilePhone"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Category</div>
+                    <div class="col-lg-9 col-md-8" id="profileCategory"></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Status</div>
+                    <div class="col-lg-9 col-md-8" id="profileStatus"></div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Account ID</div>
+                    <div class="col-lg-9 col-md-8" id="accountID"></div>
+                  </div>
+                </div>
+
+                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                  <!-- Profile Edit Form -->
+                  <form id="profileForm">
+                    <div class="row mb-3">
+                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                      <div class="col-md-8 col-lg-9">
+                        <img id="previewImage" src="assets/img/upload.png" alt="Profile"
+                          style="max-width: 300px; max-height: 300px" />
+                        <input type="hidden" id="base64ImageInput" />
+                        <div class="pt-2">
+                          <input type="file" accept="image/*" class="form-control" id="profileImageInput"
+                            style="display: none" />
+                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"
+                            onclick="document.getElementById('profileImageInput').click(); return false;"><i
+                              class="bi bi-upload"></i></a>
+                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"
+                            onclick="removeProfileImage(); return false;"><i class="bi bi-trash"></i></a>
+                          <span>The image should be a maximum of 500px of height
+                            and 500px of width</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="firstName" class="col-md-4 col-lg-3 col-form-label">First Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="firstName" type="text" class="form-control" id="firstName" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="lastName" class="col-md-4 col-lg-3 col-form-label">Last Name</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="lastName" type="text" class="form-control" id="lastName" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="about" class="col-md-4 col-lg-3 col-form-label">About</label>
+                      <div class="col-md-8 col-lg-9">
+                        <textarea name="about" class="form-control" id="about" style="height: 100px"></textarea>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Job" class="col-md-4 col-lg-3 col-form-label">Occupation</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="job" type="text" class="form-control" id="job" value="" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="address" type="text" class="form-control" id="address" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="otherPhone" type="number" class="form-control" id="otherPhone" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Twitter" class="col-md-4 col-lg-3 col-form-label">Twitter Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="twitter" type="text" class="form-control" id="twitter" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Facebook" class="col-md-4 col-lg-3 col-form-label">Facebook Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="facebook" type="text" class="form-control" id="facebook" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Instagram" class="col-md-4 col-lg-3 col-form-label">Instagram Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="instagram" type="text" class="form-control" id="instagram" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="Linkedin" class="col-md-4 col-lg-3 col-form-label">Linkedin Profile</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="linkedin" type="text" class="form-control" id="linkedin" />
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary"
+                        style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
+                        Save Changes
+                      </button>
+                    </div>
+                  </form>
+                  <!-- End Profile Edit Form -->
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-settings">
+                  <!-- Settings Form -->
+                  <form>
+                    <div class="row mb-3">
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Email Notifications</label>
+                      <div class="col-md-8 col-lg-9">
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="changesMade" checked />
+                          <label class="form-check-label" for="changesMade">
+                            Changes made to your account
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="newProducts" checked />
+                          <label class="form-check-label" for="newProducts">
+                            Information on new products and services
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" id="proOffers" />
+                          <label class="form-check-label" for="proOffers">
+                            Marketing and promo offers
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
+                        Save Changes
+                      </button>
+                    </div>
+                  </form>
+                  <!-- End settings Form -->
+                </div>
+
+                <div class="tab-pane fade pt-3" id="profile-change-password">
+                  <!-- Change Password Form -->
+                  <form>
+                    <div class="row mb-3">
+                      <label for="currentPassword" class="col-md-4 col-lg-3 col-form-label">Current Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="currentpassword" type="password" class="form-control" id="currentpassword" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="newPassword" class="col-md-4 col-lg-3 col-form-label">New Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="password" type="password" class="form-control" id="password" />
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <label for="renewPassword" class="col-md-4 col-lg-3 col-form-label">Re-enter New Password</label>
+                      <div class="col-md-8 col-lg-9">
+                        <input name="confirm" type="password" class="form-control" id="confirm" />
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary" id="passwordSubmit" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
+                        Change Password
+                      </button>
+                    </div>
+                  </form>
+                  <span id="passwordMatchError" class="error-message"></span>
+                  <!-- End Change Password Form -->
+                </div>
+                <div class="tab-pane fade pt-3" id="profile-delete-account">
+                  <!-- Change Password Form -->
+                  <form>
+                    <div class="row mb-3">
+                      <div class="col-md-8 col-lg-9">
+                        <p></p>
+                        <br />
+                        <br />
+                      </div>
+
+                      <div class="col-md-8 col-lg-9">
+                        <input name="delete" type="text" class="form-control" id="delete" required
+                          placeholder="Give us a reason why you want to delete your account" />
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary" id="deleteRequest" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
+                        Submit request
+                      </button>
+                    </div>
+                  </form>
+                  <span id="deleteError" class="error-message"></span>
+                  <!-- End Change Password Form -->
+                </div>
+              </div>
+              <br />
+              <br />
+              <div id="message" style="color: rgb(83, 21, 124); font-weight: bold"></div>
+
+
+
+              <div class="pop" id="pop">
+                <img src="assets/img/tick.png" alt="popup">
+                <h2 id="modalMessage"></h2>
+                <button type="button" onclick="closeModal()">OK</button>
+
+              </div>
+              <!-- End Bordered Tabs -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="credits">
-        <p>@2023</p>
-      </div>
-    </footer>
-    <!-- End Footer -->
+    </section>
+  </main>
 
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
+  <!-- End #main -->
+  <!-- End #main -->
+  <!--modal pop up for responses-->
+  <!-- Add this modal at the end of your HTML body -->
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/chart.js/chart.min.js"></script>
-    <script src="assets/vendor/echarts/echarts.min.js"></script>
-    <script src="assets/vendor/quill/quill.min.js"></script>
-    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-    <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; <strong><span>MoneyHive</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <p>@2024</p>
+    </div>
+  </footer>
+  <!-- End Footer -->
 
-    <script>
-      // Modal functions
-      function openModal(message) {
-          var overlay = document.querySelector(".overlay");
-          var modal = document.getElementById("pop");
-          var modalImage = document.querySelector(".pop img");
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
-          modal.classList.add("open-pop");
-          var modalMessage = document.getElementById("modalMessage");
-          modalMessage.textContent = message;
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.min.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-          if (message == 'Error') {
-              modal.classList.add("error");
-              modalImage.style.display = "none";
-          } else {
-              modal.classList.remove("error");
-          }
+  <script>
+    // Modal functions
+    function openModal(message) {
+      var overlay = document.querySelector(".overlay");
+      var modal = document.getElementById("pop");
+      var modalImage = document.querySelector(".pop img");
 
+      modal.classList.add("open-pop");
+      var modalMessage = document.getElementById("modalMessage");
+      modalMessage.textContent = message;
+
+      if (message == 'Error') {
+        modal.classList.add("error");
+        modalImage.style.display = "none";
+      } else {
+        modal.classList.remove("error");
       }
 
-      function closeModal() {
-          var modal = document.getElementById("pop");
-          modal.classList.remove("open-pop");
+    }
 
-      }
+    function closeModal() {
+      var modal = document.getElementById("pop");
+      modal.classList.remove("open-pop");
+
+    }
 
   </script>
-    <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/index.js"></script>
-    <script src="assets/js/user-profile.js"></script>
-    <script src="assets/js/update-profile.js"></script>
-    <script>
-      // Function to get the count of unread messages
-      async function getUnreadMessageCount(userId) {
-          try {
-              const response = await fetch(`https://moneyhive-mw.com:3000/get_unread_message_count/${userId}`);
-              const data = await response.json();
-              return data.unread_count;
-          } catch (error) {
-              console.error('Error fetching unread message count:', error);
-              return 0;
-          }
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/user-profile.js"></script>
+  <script src="assets/js/update-profile.js"></script>
+  <script>
+    // Function to get the count of unread messages
+    async function getUnreadMessageCount(userId) {
+      try {
+        const response = await fetch(`https://malh.fun:3000/get_unread_message_count/${userId}`);
+        const data = await response.json();
+        return data.unread_count;
+      } catch (error) {
+        console.error('Error fetching unread message count:', error);
+        return 0;
       }
+    }
 
-      // Update the unread message count
-      async function updateUnreadMessageCount(userId) {
-          const unreadMessageCountElement = document.getElementById('unreadMessageCount');
+    // Update the unread message count
+    async function updateUnreadMessageCount(userId) {
+      const unreadMessageCountElement = document.getElementById('unreadMessageCount');
 
-          try {
-              const count = await getUnreadMessageCount(userId);
-              unreadMessageCountElement.textContent = count;
-          } catch (error) {
-              console.error('Error updating unread message count:', error);
-          }
+      try {
+        const count = await getUnreadMessageCount(userId);
+        unreadMessageCountElement.textContent = count;
+      } catch (error) {
+        console.error('Error updating unread message count:', error);
       }
+    }
 
-      // Assume the user ID is 28 for demonstration purposes
-      const userData = sessionStorage.getItem('userData');
-      const user = JSON.parse(userData);
-      const userId = user.id;
+    // Assume the user ID is 28 for demonstration purposes
+    const userData = sessionStorage.getItem('userData');
+    const user = JSON.parse(userData);
+    const userId = user.id;
 
-      // Update the unread message count when the page loads
+    // Update the unread message count when the page loads
+    updateUnreadMessageCount(userId);
+
+    // You can also update the count periodically (e.g., every 5 seconds)
+    setInterval(() => {
       updateUnreadMessageCount(userId);
-
-      // You can also update the count periodically (e.g., every 5 seconds)
-      setInterval(() => {
-          updateUnreadMessageCount(userId);
-      }, 5000);
+    }, 5000);
   </script>
-  </body>
+</body>
+
 </html>
