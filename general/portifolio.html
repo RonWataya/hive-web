@@ -30,15 +30,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-EG7TJ1ETTW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EG7TJ1ETTW');
-</script>
     <style>
         .overlay {
             position: fixed;
@@ -306,8 +297,12 @@
             </li>
             <!-- End Home Nav -->
 
-   
-            <!-- End Register Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="payment">
+                    <i class="bi bi-card-list"></i>
+                    <span>Upgrade your account</span>
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link collapsed" href="privacy">
                     <i class="bi bi-card-list"></i>
@@ -413,7 +408,7 @@
                                         <div class="card-body">
                                             <p>Hear what other people are saying about us</p>
 
-                                            <button type="button" class="btn btn-primary review-button" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable">
+                                            <button type="button" class="btn btn-primary review-button" data-bs-toggle="modal" data-bs-target="#modalDialogScrollable" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">
                                                 <i class="bi bi-info-circle"></i> Reviews
                                               </button>
                                         </div>
@@ -477,7 +472,7 @@
                                             <div class="text-center">
                                                 <h5 class="card-title">Or chat with us</h5>
 
-                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChat"><i class="bi bi-chat"></i> Start a chat!</button>
+                                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChat" style="background-color: #FFAA33; border-color: #FFAA33; color: white;"><i class="bi bi-chat"></i> Start a chat!</button>
                                                 <button type="button" class="btn btn-success"><i class="bi bi-whatsapp"></i> Whatsapp!</button>
 
                                             </div>
@@ -506,7 +501,7 @@
                                                     <!-- End List group Advanced Content -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDialog" id="buttonReview">Add your review</button>
+                                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDialog" id="buttonReview" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Add your review</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -551,7 +546,7 @@
                                                     <!-- End floating Labels Form -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary" id="submitReview">Submit</button>
+                                                    <button type="submit" class="btn btn-primary" id="submitReview" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Submit</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -595,7 +590,7 @@
                                                     <!-- End floating Labels Form -->
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-primary" id="sendButton" onclick="sendChat()">Send</button>
+                                                    <button type="submit" class="btn btn-primary" id="sendButton" onclick="sendChat()" style="background-color: #FFAA33; border-color: #FFAA33; color: white;">Send</button>
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
                                                 </div>
@@ -623,8 +618,18 @@
 
                     </div>
                 </div>
-        </section>
 
+        </section>
+        <script async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+        crossorigin="anonymous"></script>
+    <!-- displa -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9841032129636382"
+        data-ad-slot="8635802794" data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     </main>
     <!-- End #main -->
 
@@ -720,6 +725,7 @@
             const receiver = JSON.parse(companyData);
             const id = user.id;
             const receiverId = receiver.user;
+            const targetmail = receiver.email;
             const userName = user.firstName+" "+user.lastName;
           const senderId = 1; // Replace with the actual sender's ID
           const messageContent = document.getElementById('chatContent').value;
@@ -735,7 +741,9 @@
               receiver_id: receiverId,
               sender_name:userName,
               content: messageContent,
+              targetmail: targetmail,
             }),
+
           })
             .then(response => response.json())
             .then(result => {
@@ -766,11 +774,11 @@
                 return 0;
             }
         }
-    
+
         // Update the unread message count
         async function updateUnreadMessageCount(userId) {
             const unreadMessageCountElement = document.getElementById('unreadMessageCount');
-    
+
             try {
                 const count = await getUnreadMessageCount(userId);
                 unreadMessageCountElement.textContent = count;
@@ -778,33 +786,32 @@
                 console.error('Error updating unread message count:', error);
             }
         }
-    
+
         // Assume the user ID is 28 for demonstration purposes
         const userData = sessionStorage.getItem('userData');
         const user = JSON.parse(userData);
         const userId = user.id;
-    
+
         // Update the unread message count when the page loads
         updateUnreadMessageCount(userId);
-    
+
         // You can also update the count periodically (e.g., every 5 seconds)
         setInterval(() => {
             updateUnreadMessageCount(userId);
         }, 5000);
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
-    crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9841032129636382"
+crossorigin="anonymous"></script>
 <!-- displa -->
 <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-9841032129636382"
-    data-ad-slot="8635802794"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
+style="display:block"
+data-ad-client="ca-pub-9841032129636382"
+data-ad-slot="8635802794"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
 <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
+(adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-
 </body>
 
 </html>
