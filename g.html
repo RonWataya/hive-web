@@ -91,11 +91,21 @@
                                                 </div>
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
-                                                        <input type="number" name="phone" placeholder="Phone"
-                                                            required="required" style="color:rgb(83, 78, 78)">
+                                                        <input type="text" name="phone" placeholder="Phone" required="required" autocomplete="off" onkeypress="return preventInvalidChars(event)" style="color:rgb(83, 78, 78)">
                                                         <i class="la la-phone"></i>
                                                     </div>
                                                 </div>
+                                                
+                                                <script>
+                                                function preventInvalidChars(e) {
+                                                    var char = String.fromCharCode(e.which);
+                                                    if (char.match(/[^0-9]/)) {
+                                                        e.preventDefault();
+                                                        return false;
+                                                    }
+                                                }
+                                                </script>
+                                                
 
                                                 <div class="col-lg-12 no-pdd">
                                                     <div class="sn-field">
